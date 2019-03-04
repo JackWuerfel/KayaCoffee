@@ -11,7 +11,8 @@ This is an angular app/website that has both authentication, user roles, and e-c
   - Whole sale partner page
   - Application Search
   - Facebook Login
-  - User Profile 
+  - User Profile
+  - Sign In Page Design
   
 ## Finished
 
