@@ -3,12 +3,12 @@
 This is an angular app/website that has both authentication, user roles, and e-commerce ability.
 
 -Currently working on
-  -Moblie styles
-  -Checkout and cart logic
-  -Whole sale partner page
-  -Application Search
-  -Facebook Login
-  -User Profile 
+  - Moblie styles
+  - Checkout and cart logic
+  - Whole sale partner page
+  - Application Search
+  - Facebook Login
+  - User Profile 
   
 -Finished 
   - Sign in with Google
