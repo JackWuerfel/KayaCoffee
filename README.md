@@ -2,7 +2,10 @@
 
 This is an angular app/website that has both authentication, user roles, and e-commerce ability.
 
--Currently working on
+## View Demo at https://kaya-coffee.firebaseapp.com/welcome
+
+## Currently Working on 
+
   - Moblie styles
   - Checkout and cart logic
   - Whole sale partner page
@@ -10,7 +13,8 @@ This is an angular app/website that has both authentication, user roles, and e-c
   - Facebook Login
   - User Profile 
   
--Finished 
+## Finished
+
   - Sign in with Google
   - Sign in with username/password
   - Sign up with username/password
@@ -20,8 +24,7 @@ This is an angular app/website that has both authentication, user roles, and e-c
   - Prevent user to access inner pages unless user is not logged In
   - Prevent user to access sign in and sign up components when a user is already logged in
   - Save user data to localstorage when user is logged in
-  
-## View Demo at https://kaya-coffee.firebaseapp.com/welcome
+ 
 
 ## Technologies used
 - Node 8.11.1
