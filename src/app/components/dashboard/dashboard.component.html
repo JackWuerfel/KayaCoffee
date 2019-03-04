@@ -1,0 +1,83 @@
+
+<div class="row">
+  <nav class="adminNav">
+    <a class="dashHeader" routerLink="/dashboard" routerLinkActive="active">
+      Dashboard
+    </a>
+    <a class="btn-close" routerLink="/welcome" routerLinkActive="active">
+      x
+    </a>
+  </nav>
+
+        <div class="content">
+          <div class="w-25"><a class="nav-link" routerLink="/register-product" routerLinkActive="active">
+            <i class="fas fa-comments"></i> Messages
+          </a></div>
+
+        <!-- routerLink="/view-products" to navigate to view-products component -->
+        <!-- routerLinkActive="active" activates active class for component-->
+        <div class="w-25">  <a class="nav-link" routerLink="/view-products" routerLinkActive="active">
+            <i class="fas fa-question-circle"></i> FAQ
+          </a></div>
+        <div class="w-25">
+          <a class="nav-link" routerLink="/view-products" routerLinkActive="active">
+              <i class="fas fa-envelope"></i> Confirm Emails
+            </a>
+          </div>
+          <div class="w-25">
+            <a class="nav-link" routerLink="/view-products" routerLinkActive="active">
+                <i class="fas fa-clipboard-list"></i> Job Postings
+              </a>
+            </div>
+            <div class="w-25">
+              <a class="nav-link" (click)="authService.SignOut()" routerLinkActive="active">
+              <i class="fas fa-sign-out-alt"></i>Log out
+                </a>
+              </div>
+
+        </div>
+        <div class="content">
+          <div class="w-25">
+            <a class="nav-link" (click)="clickUser()">
+                <i class="fas fa-user"></i> User Profile
+              </a>
+            </div>
+          <div class="w-25"><a class="nav-link" routerLink="/register-product" routerLinkActive="active">
+            <i class="fas fa-plus-circle"></i> Add Product
+          </a></div>
+
+        <!-- routerLink="/view-products" to navigate to view-products component -->
+        <!-- routerLinkActive="active" activates active class for component-->
+        <div class="w-25">  <a class="nav-link" routerLink="/view-products" routerLinkActive="active">
+            <i class="fas fa-list-alt"></i> Products List
+          </a></div>
+        <div class="w-25">
+          <a class="nav-link" routerLink="/view-products" routerLinkActive="active">
+              <i class="fas fa-newspaper"></i> Newsletter Sends
+            </a>
+          </div>
+          <div class="w-25">
+            <a class="nav-link" routerLink="/view-products" routerLinkActive="active">
+                <i class="fas fa-sort"></i> Orders
+              </a>
+            </div>
+        </div>
+        <div class="modal" [ngClass]="userProfile ? 'show' : 'hide'">
+          <div class="modal--content">
+            <a class="btn-close" (click)="clickUser()">
+              x
+            </a>
+            <div *ngIf="authService.userData as user">
+                      <img class="align-self-start mr-5 img-thumbnail rounded-circle" src="{{(user.photoURL) ? user.photoURL : '/assets/dummy-user.png'}}"
+                        alt="{{user.displayName}}">
+                        <h1>Hello: <strong>{{(user.displayName) ? user.displayName : 'User'}}</strong></h1>
+                        <p>User ID: <strong>{{user.uid}}</strong></p>
+                        <p>Email: <strong>{{user.email}}</strong></p>
+                        <p>Email Verified: <strong>{{user.emailVerified}}</strong></p>
+                </div>
+            </div>
+          </div>
+
+
+
+</div>

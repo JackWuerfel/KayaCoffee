@@ -1,0 +1,85 @@
+<div class="row">
+  <nav class="adminNav">
+    <a class="dashHeader" routerLink="/dashboard" routerLinkActive="active">
+      Dashboard
+    </a>
+    <a class="btn-close" routerLink="/welcome" routerLinkActive="active">
+      x
+    </a>
+  </nav>
+  <div class="sidebarWrapper">
+    <nav class="sidebar">
+      <div class="sidebar-sticky">
+        <ul class="nav flex-column">
+          <!-- routerLink="/register-product" to navigate to view-products component -->
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/register-product" routerLinkActive="active">
+              <i class="fas fa-plus"></i>Add Product
+            </a>
+          </li>
+          <!-- routerLink="/view-products" to navigate to view-products component -->
+          <!-- routerLinkActive="active" activates active class for component-->
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/view-products" routerLinkActive="active">
+              <i class="fas fa-list-ul"></i>Products List
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+  <section class="content">
+    <div class="pageHeader">
+      <h1>Products List</h1>
+      <div class="paginationWrapper">
+        <pagination-controls (pageChange)="p = $event" autoHide="true" responsive="true"></pagination-controls>
+      </div>
+      <!-- Preloader shows before the data loads-->
+    </div>
+    <div class="innerWrapper">
+      <div class="no-data text-center" *ngIf="preLoader">
+        <img src="https://firebasestorage.googleapis.com/v0/b/kaya-coffee.appspot.com/o/preloader.gif?alt=media&token=ae879192-ebd6-46de-a7e4-cd671c7f378e" class="preloader-icon" alt="No product">
+      </div>
+      <!-- No data shows when their is no product data available -->
+      <div class="no-data text-center" *ngIf="noData">
+        <h3 class="nodata-msg">No Coffee? Get to brewing!</h3>
+        <img src="https://firebasestorage.googleapis.com/v0/b/kaya-coffee.appspot.com/o/branding%2FnoCoffee.jpg?alt=media&token=76f5321e-a8da-48a5-9de0-75ff9dbe4357" class="noProduct" alt="No Product">
+        <a routerLink="/register-product" class="btn-default_add">
+          Add Product
+        </a>
+      </div>
+      <!-- Showing products data -->
+      <div class="table-responsive" *ngIf="hideWhenNoProduct">
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">Product Id</th>
+              <th scope="col">Name</th>
+              <th scope="col">Price</th>
+              <th scope="col">Product Number</th>
+              <th colspan="2">Edit</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- *ngFor loop iterates over product array and fetch the product's data -->
+            <!-- paginate pipe will add pagination in product's list, it won't show if items are less then 7 -->
+            <tr *ngFor="let product of Product| paginate: { itemsPerPage: 5, currentPage: p }; let i = index;">
+              <td><strong>{{product.$key}}</strong></td>
+              <td>{{product.name}}</td>
+              <td>{{product.price}}</td>
+              <td>{{product.productNumber}}</td>
+              <td>
+                <!-- routerLink="/edit-product/{{product.$key}}" is refered to { path: 'edit-product/:id', component: EditproductComponent } in app-routing.moudles.ts -->
+                <a class="btn-default" routerLink="/edit-product/{{product.$key}}"><i class="fas fa-edit"></i></a>
+              </td>
+              <td>
+                <a class="btn-default" (click)="deleteProduct(product)"><i class="fas fa-trash"></i></a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <!-- Pagination -->
+    </div>
+  </section>
+</div>

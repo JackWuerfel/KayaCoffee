@@ -1,0 +1,924 @@
+<header>
+  <!-- Top navigation -->
+  <nav class="navbar" id="navbar">
+    <div class="flex">
+      <a class="nav-btn" routerLink="/shop">
+        <span class="dashboard-text">Shop</span>
+      </a>
+      <a class="nav-btn" routerLink="/subscriptions">
+        <span class="dashboard-text">Subscription</span>
+      </a>
+      <a class="nav-btn" routerLink="/wholesale">
+        <span class="dashboard-text">Wholesale</span>
+      </a>
+      <a class="nav-btn-middle" routerLink="/view-products">
+        <img class="mobileIcon" src="https://firebasestorage.googleapis.com/v0/b/kaya-coffee.appspot.com/o/mobileIcon.png?alt=media&token=cd84be52-c00d-4094-9036-fe7887dfad34" />
+      </a>
+      <a class="nav-btn" (click)="clickContact()">
+        <span class="dashboard-text">Hours</span>
+      </a>
+      <a class="nav-btn" (click)="clickSearch()">
+        <span class="dashboard-text">Search</span>
+      </a>
+
+      <a class="nav-btn" routerLink="/dashboard">
+        <span class="dashboard-text">My Account</span>
+      </a>
+    </div>
+  </nav>
+  <div class="hero-wrapper">
+    <div class="inner-wrapper">
+      <div id="logo"> </div>
+      <h1>"Coffee. Tea. Food."</h1>
+      <p>
+        "That’s what we do. And we try to do it in the most delicious, earth-friendly way we can."
+      </p>
+      <h2>The Cotton Family</h2>
+      <p>
+        • Locally Owned and Operated Since 2001 •
+      </p>
+    </div>
+  </div>
+</header>
+<section class="tabs">
+  <nav>
+    <ul>
+      <li (click)="clickAbout()">
+        <a [ngClass]="aboutActive ? 'isActive' : 'noActive'"> <i class="icon fas fa-home"></i><span>About Us</span></a>
+      </li>
+      <li (click)="clickMenu()">
+        <a [ngClass]="menuActive ? 'isActive' : 'noActive'"><i class="icon fas fa-coffee"></i><span>Menu</span></a>
+      </li>
+      <li (click)="clickConnect()">
+        <a [ngClass]="connectActive ? 'isActive' : 'noActive'"><i class="icon fas fa-cloud-upload-alt"></i><span>Connect</span></a>
+      </li>
+      <li (click)="clickEvent()">
+        <a [ngClass]="eventActive ? 'isActive' : 'noActive'"><i class="icon far fa-calendar-check"></i><span>Events</span></a>
+      </li>
+      <li (click)="clickGallery()">
+        <a [ngClass]="galleryActive ? 'isActive' : 'noActive'"><i class="icon fas fa-camera-retro"></i><span>Gallery</span></a>
+      </li>
+    </ul>
+  </nav>
+</section>
+<!-- Introduction Content -->
+<section class="main-wrapper">
+  <!-- Modal Content -->
+  <div class="modal" [ngClass]="contactTab ? 'show' : 'hide'">
+    <div class="modal--content">
+      <a class="btn-close" (click)="clickContact()">
+        x
+      </a>
+      <p class="menuTitle">Hours</p>‌ ‌ ‌ ‌ ‌
+      <div class="table">
+        <div class="row-header">
+          <p class="w-50 columnTitle">Day</p>
+          <p class="w-50 columnTitle">Hours</p>
+        </div>
+        <div class="row-inner">
+          <p class="w-50">
+            Monday - Thursday:</p>
+          <p class="w-50">
+            7am until 12am</p>
+        </div>
+        <div class="row-inner">
+          <p class="w-50">
+            Friday:</p>
+          <p class="w-50">
+            7am until 11:00pm</p>
+        </div>
+        <div class="row-inner">
+          <p class="w-50">
+            Saturday:</p>
+          <p class="w-50">
+            9am until 11:00pm</p>
+        </div>
+        <div class="row-inner">
+          <p class="w-50">
+            Sunday:</p>
+          <p class="w-50">
+            9am until 12:00pm</p>
+        </div>
+        <div class="row-inner">
+          <p class="w-50">
+            Summer Hours:</p>
+          <p class="w-50">
+            7:00am until 7:00pm</p>
+        </div>
+        <p class="text-center"> &#8226;989-772-9016 &#8226; 1029 S. University Mt. Pleasant, MI&#8226;</p>
+      </div>
+    </div>
+  </div>
+  <div class="modal" [ngClass]="searchTab ? 'show' : 'hide'">
+    <div class="modal--content">
+      <a class="btn-close" (click)="clickSearch()">
+        x
+      </a>
+      <p class="menuTitle">Search</p>‌ ‌ ‌ ‌ ‌
+      <div>
+        <form class="newsletterForm" [formGroup]="emaillistForm" (ngSubmit)="submitEmailData()" novalidate>
+          <!-- Declared formGroup="productForm" to create Reactive form group, novalidate is used to disable HTML5 default validation-->
+          <div class="inputWrapper">
+            <input type="email" formControlName="email" class="form-control" placeholder="Please Enter Your Email" required> <!-- name is used to commnunicate to formGroup's properties-->
+            <p *ngIf="email.touched && email.invalid" class="error"><sup>*</sup>Please Enter A Correct Email</p> <!-- Accessing fromGoup object's property using Getter method -->
+            <p *ngIf="email.errors?.minlength" class="error"><sup>*</sup>Email</p> <!-- Accessing Reactive Forms error property using Getter method-->
+          </div>
+          <div class="form-group">
+            <button type="submit" class="btn-default" [disabled]="!emaillistForm.valid">SUBSCRIBE</button> <!--  Disable product form unless it is valid-->
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="modal" [ngClass]="grid1Modal ? 'show' : 'hide'">
+    <div class="modal--content">
+      <a class="btn-close" (click)="clickGrid1()">
+        x
+      </a>
+      <img style="width:80%;border-radius:5px;" src="https://firebasestorage.googleapis.com/v0/b/kaya-coffee.appspot.com/o/gallery%2Fgrid--1__bg.jpg?alt=media&token=c961c811-3257-4395-8adb-556eceecb70a" />
+    </div>
+  </div>
+  <div class="modal" [ngClass]="grid2Modal ? 'show' : 'hide'">
+    <div class="modal--content">
+      <a class="btn-close" (click)="clickGrid2()">
+        x
+      </a>
+      <img style="width:80%;border-radius:5px;" src="https://firebasestorage.googleapis.com/v0/b/kaya-coffee.appspot.com/o/gallery%2Fgrid--2__bg.jpg?alt=media&token=e0eeb240-1ec7-44ae-a17c-a0f13ca6a1de" />
+    </div>
+  </div>
+  <div class="modal" [ngClass]="grid3Modal ? 'show' : 'hide'">
+    <div class="modal--content">
+      <a class="btn-close" (click)="clickGrid3()">
+        x
+      </a>
+      <img style="width:80%;border-radius:5px;" src="https://firebasestorage.googleapis.com/v0/b/kaya-coffee.appspot.com/o/gallery%2Fgrid--3__bg.jpg?alt=media&token=3fbd0a15-07d8-4992-a676-ef720387f988" />
+    </div>
+  </div>
+  <div class="modal" [ngClass]="grid4Modal ? 'show' : 'hide'">
+    <div class="modal--content">
+      <a class="btn-close" (click)="clickGrid4()">
+        x
+      </a>
+      <img style="width:40%;border-radius:5px;" src="https://firebasestorage.googleapis.com/v0/b/kaya-coffee.appspot.com/o/gallery%2Fgrid--4__bg.jpg?alt=media&token=c6f7807a-094b-4311-ae8c-c33c908d271c" />
+    </div>
+  </div>
+  <div class="modal" [ngClass]="grid5Modal ? 'show' : 'hide'">
+    <div class="modal--content">
+      <a class="btn-close" (click)="clickGrid5()">
+        x
+      </a>
+      <img style="width:40%;border-radius:5px;" src="https://firebasestorage.googleapis.com/v0/b/kaya-coffee.appspot.com/o/gallery%2Fgrid--5__bg.jpg?alt=media&token=7b312f2b-1e76-440f-b0b0-5ff48ce8ca3e" />
+    </div>
+  </div>
+  <div class="modal" [ngClass]="grid6Modal ? 'show' : 'hide'">
+    <div class="modal--content">
+      <a class="btn-close" (click)="clickGrid6()">
+        x
+      </a>
+      <img style="width:40%;border-radius:5px;" src="https://firebasestorage.googleapis.com/v0/b/kaya-coffee.appspot.com/o/gallery%2Fgrid--6__bg.jpg?alt=media&token=1b3f7497-2f3d-49e6-b3bd-d8411c804abd" />
+    </div>
+  </div>
+  <div class="modal" [ngClass]="grid7Modal ? 'show' : 'hide'">
+    <div class="modal--content">
+      <a class="btn-close" (click)="clickGrid7()">
+        x
+      </a>
+      <img style="width:80%;border-radius:5px;" src="https://firebasestorage.googleapis.com/v0/b/kaya-coffee.appspot.com/o/gallery%2Fgrid--7__bg.jpg?alt=media&token=c9a7ea7c-b6b3-44d8-96e7-890d6e4a5ad8" />
+    </div>
+  </div>
+  <div class="modal" [ngClass]="grid8Modal ? 'show' : 'hide'">
+    <div class="modal--content">
+      <a class="btn-close" (click)="clickGrid8()">
+        x
+      </a>
+      <img style="width:80%;border-radius:5px;" src="https://firebasestorage.googleapis.com/v0/b/kaya-coffee.appspot.com/o/gallery%2Fgrid--8__bg.jpg?alt=media&token=c2b69098-7c49-4c47-af33-985909cc8a0b" />
+    </div>
+  </div>
+  <!-- End of Modal Content -->
+  <div [ngClass]="tab1 ? 'hide' : 'show'">
+    <h2>Opening its doors</h2>
+    <p>
+      in 2001, Kaya originated as a post-college dream of young Scott Gordon. Kaya is a neighborhood coffee and tea shop
+      located close to the CMU campus and Mt. Pleasant community. Serving fair trade coffee from Equal Exchange and healthy fresh food, Kaya soon
+      took on a life of its own.
+      <img class="left" src="https://firebasestorage.googleapis.com/v0/b/kaya-coffee.appspot.com/o/branding%2FcoffeeCup.jpg?alt=media&token=3660c9c6-131e-4c5b-804c-72b0bcf22d38" />
+      <br />
+      <br />
+      Its cozy, comfortable atmosphere gave students, professors, and neighbors a place to work, study, caffeniate, eat, relax, and make
+      friends. In 2008, Scott passed the keys on to the Cotton family who currently, along with the dedicated baristas and customers, keep the
+      doors open.
+      <br />
+      <br />
+      Kaya believes in doing as little harm as possible. So we are dedicated to serving fairly traded coffee and tea as often as possible,
+      using beans from Equal Exchange in all our espresso drinks. Fairly traded means we may pay a little more for our coffee and tea to help
+      insure that the farmers growing it will be paid fairly. Our loose leaf teas all come from Arbor Teas, a Michigan-based tea company also
+      focusing on organic, fair trade tea. Our food is purchased from local vendors whenever possible, or made right here at Kaya.
+      <br />
+      <br />
+      Locally, we participate in the Mt. Pleasant Recycling Program and applaud the city’s curbside pick up. Our milk jugs, cans, bottles,
+      plastic, cardboard and paper all go to the Recycling Facility thanks to our city’s efforts to keep Mt. Pleasant even more pleasant. Local
+      gardeners recycle our coffee grounds.
+      <br />
+      <br />
+      <img class="right" src="https://firebasestorage.googleapis.com/v0/b/kaya-coffee.appspot.com/o/branding%2FcoffeeCard.jpg?alt=media&token=28a2ed68-e5b9-413b-b3b4-3bfdc42490d6" />
+      Supporting the local arts, we host Open Mic nights on Wednesday night during college sessions, Old Time Music jams, Irish music jams,
+      and a Mid-Month Music Series featuring area musicians. Check the event calendar to see when these are happening.
+      <br />
+      <br />
+      On our “Featured Artist” board, we have a rotating art display from CMU students, professors, and area artists. We also host Poetry
+      Slams and musical fund-raisers dedicated to generating funds for such worthy goals as the Isabella County Food Pantry and the Haiti Project
+      Against Poverty.
+      <br />
+      <br />
+      One of our favorite regulars, 99-year-young Brian Wood discovered Kaya about 5 years ago on a neighborhood walk to ease his arthritis.
+      He said, “I had to go on a walk. I saw this place, so I came in. People were nice to me, so I’ve been coming back.” We have been honored
+      with CM Life’s “Best Coffee Shop” Award for the past several years, but we think Brian says it best.
+      <br />
+      <br />
+      We hope you walk in, and then keep on coming back.</p>
+  </div>
+  <div [ngClass]="tab2 ? 'show' : 'hide'">
+    <section id="section-iconfall-2 menu">
+      <div id="myCarousel" class="carousel slide">
+        <h3>Coffees & Teas</h3>
+        <hr>
+        <div class="slide1">
+          <p class="menuTitle">Classic Coffee Drinks</p>‌ ‌ ‌ ‌ ‌
+          <div class="table">
+            <div class="row-header">
+              <p class="w-25 columnTitle">Drink</p>
+              <p class="w-25 columnTitle">Short</p>
+              <p class="w-25 columnTitle">Tall</p>
+              <p class="w-25 columnTitle">Grande</p>
+            </div>
+            <div class="row-inner">
+              <p class="w-25">
+                REGULAR</p>
+              <p class="w-25">
+                $1.41</p>
+              <p class="w-25">
+                $1.89</p>
+              <p class="w-25">$2.36</p>
+            </div>
+            <div class="row-inner">
+              <p class="w-25">
+                ESPRESSO</p>
+              <p class="w-25">
+                $1.79</p>
+              <p class="w-25">
+                N/A</p>
+              <p class="w-25">N/A</p>
+            </div>
+            <div class="row-inner">
+              <p class="w-25">
+                LATTE</p>
+              <p class="w-25">
+                $2.83</p>
+              <p class="w-25">
+                $3.30</p>
+              <p class="w-25">$3.79</p>
+            </div>
+            <div class="row-inner">
+              <p class="w-25">
+                CAPPUCCINO</p>
+              <p class="w-25">
+                $2.83</p>
+              <p class="w-25">
+                $3.30</p>
+              <p class="w-25">$3.79</p>
+            </div>
+            <div class="row-inner">
+              <p class="w-25">
+                CAFE AU LAIT</p>
+              <p class="w-25">
+                $2.83</p>
+              <p class="w-25">
+                $3.30</p>
+              <p class="w-25">$3.79</p>
+            </div>
+            <div class="row-inner">
+              <p class="w-25">
+                MOCHA</p>
+              <p class="w-25">
+                $3.07</p>
+              <p class="w-25">
+                $3.54</p>
+              <p class="w-25">$4.01</p>
+            </div>
+            <div class="row-inner">
+              <p class="w-25">
+                AMERICANO</p>
+              <p class="w-25">
+                $1.89</p>
+              <p class="w-25">
+                $2.12</p>
+              <p class="w-25">$2.59</p>
+            </div>
+            <div class="row-inner">
+              <p class="w-25">
+                EYE OPENER</p>
+              <p class="w-25">
+                N/A</p>
+              <p class="w-25">
+                $2.36</p>
+              <p class="w-25">N/A</p>
+            </div>
+            <div class="row-inner">
+              <p class="w-25">
+                INSOMNIAC</p>
+              <p class="w-25">
+                N/A</p>
+              <p class="w-25">
+                $3.30</p>
+              <p class="w-25">N/A</p>
+            </div>
+          </div>
+        </div>
+        <div class="slide2">
+          <p class="menuTitle">Speciality Coffee Drinks</p>‌ ‌
+          <p class="subTitle">
+            All Contain Espresso, Steamed Milk, and Flavors
+          </p> ‌ ‌ ‌
+          <div class="table">
+            <div class="row-header">
+              <p class="w-25 columnTitle">Drink</p>
+              <p class="w-50 columnTitle">Ingredients</p>
+              <p class="w-25 columnTitle">Size & Price</p>
+            </div>
+            <div class="row-inner">
+              <p class="w-25">
+                THIRSTY TURTLE
+              </p>
+              <p class="w-50">
+                Caramel, Chocolate, Praline
+              </p>
+              <p class="w-25">
+                Short & Tall - $3.07 <br /> Grande - $4.01
+              </p>
+            </div>
+            <div class="row-inner">
+              <p class="w-25">THE NUTTY IRISHMAN</p>
+              <p class="w-50">Chocolate, Irish Cream, Hazelnut, Praline</p>
+              <p class="w-25">Short & Tall - $3.07 <br /> Grande - $4.01 </p>
+            </div>
+            <div class="row-inner">
+              <p class="w-25">LOVE POTION #9</p>
+              <p class="w-50">Chocolate French Vanilla, Creme de Menthe</p>
+              <p class="w-25">Short & Tall - $3.07 <br /> Grande - $4.01 </p>
+            </div>
+            <div class="row-inner">
+              <p class="w-25">CAFE DIAVOLO</p>
+              <p class="w-50">Caramel, White Chocolate</p>
+              <p class="w-25">Short & Tall - $3.07 <br /> Grande - $4.01 </p>
+            </div>
+            <div class="row-inner">
+              <p class="w-25">THE CANDY BAR</p>
+              <p class="w-50">Caramel, English Toffee, Creme de Cacao</p>
+              <p class="w-25">Short & Tall - $3.07 <br /> Grande - $4.01 </p>
+            </div>
+            <div class="row-inner">
+              <p class="w-25">INSTANT KARMA</p>
+              <p class="w-50">Chocolate, Amaretto</p>
+              <p class="w-25">Short & Tall - $3.07 <br /> Grande - $4.01 </p>
+            </div>
+            <div class="row-inner">
+              <p class="w-25">DRUNKEN LEPRECHAUN</p>
+              <p class="w-50">White Chocolate, Irish Cream, Creme de Menthe</p>
+              <p class="w-25">Short & Tall - $3.07 <br /> Grande - $4.01 </p>
+            </div>
+            <div class="row-inner">
+              <p class="w-25">SUGAR & SPICE</p>
+              <p class="w-50">Cinnamon, Macademia Nut, Tiramisu</p>
+              <p class="w-25">Short & Tall - $3.07 <br /> Grande - $4.01 </p>
+            </div>
+            <div class="row-inner">
+              <p class="w-25">ETERNAL HAPPINESS</p>
+              <p class="w-50">White Chocolate, Irish Cream</p>
+              <p class="w-25">Short & Tall - $3.07 <br /> Grande - $4.01 </p>
+            </div>
+            <div class="row-inner">
+              <p class="w-25">NONCHALANT</p>
+              <p class="w-50">White & Dark Chocolate</p>
+              <p class="w-25">Short & Tall - $3.07 <br /> Grande - $4.01 </p>
+            </div>
+            <div class="row-inner">
+              <p class="w-25">CUP OF JOY</p>
+              <p class="w-50">Chocolate, Coconut, Almond</p>
+              <p class="w-25">Short & Tall - $3.07 <br /> Grande - $4.01 </p>
+            </div>
+            <div class="row-inner">
+              <p class="w-25">CLOUDY DAY</p>
+              <p class="w-50">Caramel</p>
+              <p class="w-25">Short & Tall - $3.07 <br /> Grande - $4.01 </p>
+            </div>
+            <div class="row-inner">
+              <p class="w-25">GET OVER IT</p>
+              <p class="w-50">White Chocolate, Raspberry</p>
+              <p class="w-25">Short & Tall - $3.07 <br /> Grande - $4.01 </p>
+            </div>
+            <div class="row-inner">
+              <p class="w-25">SERCURITY BLANKET</p>
+              <p class="w-50">Brown Sugar, Cinnamon, Toasted Walnut</p>
+              <p class="w-25">Short & Tall - $3.07 <br /> Grande - $4.01 </p>
+            </div>
+            <div class="row-inner">
+              <p class="w-25">SUNSHINE</p>
+              <p class="w-50">Sugarfree, Hazelnut</p>
+              <p class="w-25">Short & Tall - $3.07 <br /> Grande - $4.01 </p>
+            </div>
+          </div>
+        </div>
+        <div class="slide3">
+          ‌ ‌ ‌ ‌ <p class="menuTitle">Speciality Tea Drinks</p>‌ ‌
+          <p class="subTitle">
+            All Contain Tea, Steamed Milk, and Flavors
+          </p>
+          <div class="table">
+            <div class="row-header">
+              <p class="w-25 columnTitle">Drink</p>
+              <p class="w-50 columnTitle">Ingredients</p>
+              <p class="w-25 columnTitle">Size & Price</p>
+            </div>
+            <div class="row-inner">
+              <p class="w-25">THE LIMEY</p>
+              <p class="w-50">English Breakfast Tea, Orgeat, and Raspberry</p>
+              <p class="w-25">Short & Tall - $3.07 <br /> Grande - $4.01 </p>
+            </div>
+            <div class="row-inner">
+              <p class="w-25">THE PURPLE HAZE</p>
+              <p class="w-50">Passion Plum Tea, Praline, and Blueberry</p>
+              <p class="w-25">Short & Tall - $3.07 <br /> Grande - $4.01 </p>
+            </div>
+            <div class="row-inner">
+              <p class="w-25">MERLE THE WONDER TEA</p>
+              <p class="w-50">Orange Pekoe Tea, French Vanilla, Blackberry, Coconut</p>
+              <p class="w-25">Short & Tall - $3.07 <br /> Grande - $4.01 </p>
+            </div>
+            <div class="row-inner">
+              <p class="w-25">THE BLACK SHEEP</p>
+              <p class="w-50">Darjeeling tea, Creme de Cacao, and Cinnamon</p>
+              <p class="w-25">Short & Tall - $3.07 <br /> Grande - $4.01 </p>
+            </div>
+            <div class="row-inner">
+              <p class="w-25">THE FUNKY MONKEY</p>
+              <p class="w-50">Earl Grey Tea with Honey, Amaretto, Banana</p>
+              <p class="w-25">Short & Tall - $3.07 <br /> Grande - $4.01 </p>
+            </div>
+            <div class="row-inner">
+              <p class="w-25">EINSTEIN'S BREATH</p>
+              <p class="w-50">Plantation Mint Tea, Cheesecake, White Chocolate</p>
+              <p class="w-25">Short & Tall - $3.07 <br /> Grande - $4.01 </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <br />
+      <br />
+      <h3>Original Salads & Sandwhices</h3>
+      <hr>
+      <div class="slide5">
+        <p class="menuTitle">Kaya's Orginial Sandwiches</p>‌ ‌ ‌ ‌ ‌
+        <p class="subTitle">
+          Comes with a Pickle and a Side of Chips or Fruit
+        </p>
+        <div class="table">
+          <div class="row-header">
+            <p class="w-25 columnTitle">Name</p>
+            <p class="w-50 columnTitle">Ingredients</p>
+            <p class="w-25 columnTitle">Price</p>
+          </div>
+          <div class="row-inner">
+            <p class="w-25">ARISTOTLE</p>
+            <p class="w-50">Smoked Turkey Breast, Muenster, Red Onions, Tomatoes, Cucumbers, Dill Pickles, and Romaine Lettuce with our Famous Dill Mayo on 7-Grain Bread. </p>
+            <p class="w-25">
+              $6.13
+            </p>
+          </div>
+          <div class="row-inner">
+            <p class="w-25">SOCRATES</p>
+            <p class="w-50">honey ham, swiss cheese, walnuts, pineapple, romaine lettuce, and spiced cream cheese wrapped in an original flatbread wrap.</p>
+            <p class="w-25">
+              $6.13
+            </p>
+          </div>
+          <div class="row-inner">
+            <p class="w-25">DESCARTES</p>
+            <p class="w-50">hummus, provolone, cheese, green peppers, red onions, romaine lettuce wrapped in a sun dried tomato flatbread wrap. </p>
+            <p class="w-25">
+              $6.13
+            </p>
+          </div>
+          <div class="row-inner">
+            <p class="w-25">
+              ROUSSEAU
+            </p>
+            <p class="w-50">
+              Roast beef, muenster cheese, green peppers, red onions, romaine lettuce with our horsey mayo and picante sauce wrapped in our sun dried tomato flatbread.
+            </p>
+            <p class="w-25">
+              $6.13
+            </p>
+          </div>
+          <div class="row-inner">
+            <p class="w-25">
+              AUGUSTINE
+            </p>
+            <p class="w-50">
+              Grilled chicken breast, provolone cheese, walnuts, red onion, tomatoes, and romaine lettuce with buttermilk ranch and Dijon wrapped in our original flatbread.
+            </p>
+            <p class="w-25">
+              $6.13
+            </p>
+          </div>
+          <div class="row-inner">
+            <p class="w-25">CASEY JONES</p>
+            <p class="w-50">Honey ham and swiss cheese grilled on white Panini bread with mayo and Dijon, the original panini. </p>
+            <p class="w-25">
+              $6.13
+            </p>
+          </div>
+          <div class="row-inner">
+            <p class="w-25">TENNESSEE JED</p>
+            <p class="w-50">Roast beef, provolone cheese, tomato, grilled on white Panini bread with horsey mayo, topped with crisp lettuce. </p>
+            <p class="w-25">
+              $6.13
+            </p>
+          </div>
+          <div class="row-inner">
+            <p class="w-25">THE COMMODORE</p>
+            <p class="w-50">9-grain bread, vegetable cream cheese, banana peppers, green peppers, onions, spinach, swiss cheese </p>
+            <p class="w-25">
+              $6.13
+            </p>
+          </div>
+          <div class="row-inner">
+            <p class="w-25">COSMIC CHARLIE</p>
+            <p class="w-50">Smoked turkey, muenster, dill pickles, grilled on white Panini bread, dill mayo </p>
+            <p class="w-25">
+              $6.13
+            </p>
+          </div>
+          <div class="row-inner">
+            <p class="w-25">THE KAYA CLUB</p>
+            <p class="w-50">Smoked turkey and bacon, provolone cheese, tomato, red onion, grilled on white Panini bread with mayo</p>
+            <p class="w-25">
+              $6.61
+            </p>
+          </div>
+          <div class="row-inner">
+            <p class="w-25">CREATE YOUR OWN</p>
+            <p class="w-50">Choose bread, 1 meat, 1 cheese, veggies, dressing </p>
+            <p class="w-25">
+              $6.13
+            </p>
+          </div>
+          <div class="row-inner">
+            <p class="w-25">GRILLED CHEESE</p>
+            <p class="w-50">
+              Choose any chesse or a combination to make a great afternoon snack!
+            </p>
+            <p class="w-25">2.83</p>
+          </div>
+          <div class="row-inner">
+            <p class="w-25">GRILLED PB & JELLY</p>
+            <p class="w-50">
+              Only three ingredients needed to make a memorable time!
+            </p>
+            <p class="w-25">2.83</p>
+          </div>
+        </div>
+        <div class="slide4">
+          ‌ <p class="menuTitle">Kaya's Orginial Salads</p>‌ ‌
+          <p class="subTitle">
+            All Salads Include a Slice of our 7-Grain Bread
+          </p>‌ ‌
+          <div class="table">
+            <div class="row-header">
+              <p class="w-25 columnTitle">Name</p>
+              <p class="w-50 columnTitle">Ingredients</p>
+              <p class="w-25 columnTitle">Price</p>
+            </div>
+            <div class="row-inner">
+              <p class="w-25">MICHIGAN</p>
+              <p class="w-50">Spinach, Romaine, Red Onions, Dried Michigan Cherries, Walnuts, Feta, Balsamic Vinaigrette</p>
+              <p class="w-25">$5.66</p>
+            </div>
+            <div class="row-inner">
+              <p class="w-25">GREEK</p>
+              <p class="w-50">Spinach and Romaine Lettuce with Black Olives, Feta Cheese, Tomatoes, Banana Peppers, and Red Onions <br />tossess in our Greek Dressing</p>
+              <p class="w-25">$5.66</p>
+            </div>
+            <div class="row-inner">
+              <p class="w-25">CAESAR</p>
+              <p class="w-50">Romaine Lettuce with Seasoned Grilled Chicken, Croutons, Asiago Chesse, and Bacon tossed with Creamy Caesar Dressing</p>
+              <p class="w-25">$5.66</p>
+            </div>
+            <div class="row-inner">
+              <p class="w-25">ASIAN</p>
+              <p class="w-50">Spinach and Romaine with Seasoned Grilled Chicken, Mandarian Oranges, Chow-mein Noodles, Almonds, and Sesame Seeds tossed in our Asian Sesame Vinaigrette</p>
+              <p class="w-25">$5.66</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <br />
+      <br />
+      <h3>Cold Drinks</h3>
+      <hr>
+      <div class="slide 6">
+        <p class="menuTitle">Blended Concoctions</p>‌ ‌ ‌ ‌ ‌
+        <p class="subTitle">
+          Our chilled espresso, milk, and flavorings blended with ice until smooth and frothy, the heaped with whipped cream
+        </p>
+        <div class="table">
+          <div class="row-header">
+            <p class="w-25 columnTitle">Name</p>
+            <p class="w-50 columnTitle">Ingredients</p>
+            <p class="w-25 columnTitle">Size & Price</p>
+          </div>
+          <div class="row-inner">
+            <p class="w-25">POLAR BEAR</p>
+            <p class="w-50">Ghirardelli white chocolate, French vanilla</p>
+            <p class="w-25">
+              GRANDE ONLY: $ 4.24
+            </p>
+          </div>
+          <div class="row-inner">
+            <p class="w-25">CARAMEL FREEZE</p>
+            <p class="w-50">Ghirardelli white chocolate, creamy caramel</p>
+            <p class="w-25">
+              GRANDE ONLY: $ 4.24
+            </p>
+          </div>
+          <div class="row-inner">
+            <p class="w-25">MOCHA FRAPPE</p>
+            <p class="w-50">Ghirardelli cocoa and French vanilla</p>
+            <p class="w-25">
+              GRANDE ONLY: $ 4.24
+            </p>
+          </div>
+          <div class="row-inner">
+            <p class="w-25">REAL FRUIT SMOOTHIES</p>
+            <p class="w-50">Your choice of blueberry, strawberry, or raspberry</p>
+            <p class="w-25">
+              GRANDE ONLY: $ 4.24
+            </p>
+          </div>
+          <div class="row-inner">
+            <p class="w-25">MILKSHAKES</p>
+            <p class="w-50">Chocolate or Vanilla: Thick, delicious old-fashioned</p>
+            <p class="w-25">
+              GRANDE ONLY: $ 4.24
+            </p>
+          </div>
+          <div class="row-inner">
+            <p class="w-25">MALTS</p>
+            <p class="w-50">Chocolate, Vanilla or Toranni Flavored</p>
+            <p class="w-25">
+              GRANDE ONLY: $ 4.48
+            </p>
+          </div>
+          <div class="row-inner">
+            <p class="w-25">ESPRESSO SHAKE</p>
+            <p class="w-50">N/A</p>
+            <p class="w-25">$4.72</p>
+          </div>
+          <div class="row-inner">
+            <p class="w-25">CHAI SHAKE</p>
+            <p class="w-50">N/A</p>
+            <p class="w-25">$4.72</p>
+          </div>
+          <div class="row-inner">
+            <p class="w-25">KICKIN COKE</p>
+            <p class="w-50">Two shots of espresso, coke, & vanilla on ice</p>
+            <p class="w-25">$3.30</p>
+          </div>
+          <div class="row-inner">
+            <p class="w-25">ITALIAN SODA</p>
+            <p class="w-50">Sparkling Soda with any of our Torani Syrup</p>
+            <p class="w-25">$2.36</p>
+          </div>
+          <div class="row-inner">
+            <p class="w-25">FRENCH SODA</p>
+            <p class="w-50">Creamy Italian soda topped with whipped cream </p>
+            <p class="w-25">$2.59</p>
+          </div>
+          <div class="row-inner">
+            <p class="w-25">NANTUCKET NECTAR</p>
+            <p class="w-50">*Read packaging for ingredients*</p>
+            <p class="w-25">$2.36</p>
+          </div>
+          <div class="row-inner">
+            <p class="w-25">JONES SODA</p>
+            <p class="w-50">*Read packaging for ingredients*</p>
+            <p class="w-25">$2.12</p>
+          </div>
+          <div class="row-inner">
+            <p class="w-25">SODA</p>
+            <p class="w-50">*Read packaging for ingredients*</p>
+            <p class="w-25">$1.19</p>
+          </div>
+          <div class="row-inner">
+            <p class="w-25">RED BULL</p>
+            <p class="w-50">*Read packaging for ingredients*</p>
+            <p class="w-25">$2.36</p>
+          </div>
+          <div class="row-inner">
+            <p class="w-25">SUPER SLAP</p>
+            <p class="w-50">*Read packaging for ingredients*</p>
+            <p class="w-25">$3.30</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+  <div [ngClass]="tab3 ? 'show' : 'hide'">
+    <h3>
+      Actual Customer Reviews
+    </h3>
+    <p>
+      And That's Just A Few
+    </p>
+    <div class="table">
+      <div class="row-normal">
+        <div class="w-50 card">
+          <i class="fas fa-quote-left"></i>
+          <p>
+            Kaya Coffee provides a warm and inviting atmosphere that you don't get in many places around mount pleasant. Great place to kick back and get your study on!
+          </p>
+          <hr />
+          <img class="testUser" src="https://firebasestorage.googleapis.com/v0/b/kaya-coffee.appspot.com/o/test-1.png?alt=media&token=91a504c0-0d63-47b9-bcc2-8a30a6ec9241" />
+          <p>
+            Jessica Issac
+            <br />
+            Graduate Student / CMU
+          </p>
+          <p>
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+          </p>
+        </div>
+        <div class="w-50 card">
+          <i class="fas fa-quote-left"></i>
+          <p>
+            When Kaya got into the roasting business, we were the first to benefit. We now serve a higher quality product that makes every customer smile!
+          </p>
+          <hr />
+          <img class="testUser" src="https://firebasestorage.googleapis.com/v0/b/kaya-coffee.appspot.com/o/test-2.png?alt=media&token=7bd46aa4-384e-45d5-9b9e-8f3afc47416a" />
+          <p>
+            Greg Nelson
+            <br />
+            Owner / Red Rooster
+          </p>
+          <p>
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="table">
+      <div class="row-normal">
+        <div class="w-33">
+          <a target="_blank" href="https://twitter.com/kayacoffeehouse" class="icon"><i class="fab fa-twitter"></i></a>
+        </div>
+        <div class="w-33">
+          <a target="_blank" href="https://www.facebook.com/kayacoffeehouses/" class="icon"><i class="fab fa-facebook"></i></a>
+        </div>
+        <div class="w-33">
+          <a target="_blank" href="https://www.instagram.com/kayacoffeehouse" class="icon"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div [ngClass]="tab4 ? 'show' : 'hide'">
+    <h3>
+      Your Regularly Scheduled Programming
+    </h3>
+    <p class="menuTitle">
+      Old Time Jam
+    </p>
+    <ul class="event">
+      <li>
+        Every Other Tuesday at 8pm
+      </li>
+      <li>
+        Join a Bunch of Musician Friends for a Night of Fun
+      </li>
+      <li>
+        Come on down and listen to the classics!
+      </li>
+    </ul>
+    <p class="menuTitle">
+      Open Mic Night
+    </p>
+    <ul class="event">
+      <li>
+        Every Wednesday at 8pm
+      </li>
+      <li>
+        Ask one of our Talented Barista's for Sign Up Info
+      </li>
+      <li>
+        Come listen to the talent found here in Mount Pleastant!
+      </li>
+    </ul>
+  </div>
+  <div [ngClass]="tab5 ? 'show' : 'hide'">
+    <h3 class="text-center">
+      Get A Peak At Our New Space!
+    </h3>
+    <div class="table">
+      <div class="row-normal">
+        <div class="w-25 grid-1" (click)="clickGrid1()">
+        </div>
+        <div class="w-25 grid-2" (click)="clickGrid2()">
+        </div>
+        <div class="w-25 grid-3" (click)="clickGrid3()">
+        </div>
+        <div class="w-25 grid-4" (click)="clickGrid4()">
+        </div>
+      </div>
+      <div class="row-normal">
+        <div class="w-25 grid-5" (click)="clickGrid5()">
+        </div>
+        <div class="w-25 grid-6" (click)="clickGrid6()">
+        </div>
+        <div class="w-25 grid-7" (click)="clickGrid7()">
+        </div>
+        <div class="w-25 grid-8" (click)="clickGrid8()">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="newsletter">
+  <p>Sign up for our newsletter to receive special offers, event invitations, and more.</p>
+  <a class="btn" (click)="clickJoin()">
+    Join Now
+  </a>
+  <div [ngClass]="Join ? 'show' : 'hide'">
+    <form class="newsletterForm" [formGroup]="emaillistForm" (ngSubmit)="submitEmailData()" novalidate>
+      <!-- Declared formGroup="productForm" to create Reactive form group, novalidate is used to disable HTML5 default validation-->
+      <div class="inputWrapper">
+        <input type="email" formControlName="email" class="form-control" placeholder="Please Enter Your Email" required> <!-- name is used to commnunicate to formGroup's properties-->
+        <p *ngIf="email.touched && email.invalid" class="error"><sup>*</sup>Please Enter A Correct Email</p> <!-- Accessing fromGoup object's property using Getter method -->
+        <p *ngIf="email.errors?.minlength" class="error"><sup>*</sup>Email</p> <!-- Accessing Reactive Forms error property using Getter method-->
+      </div>
+      <div class="form-group">
+        <button type="submit" class="btn-default" [disabled]="!emaillistForm.valid">SUBSCRIBE</button> <!--  Disable product form unless it is valid-->
+      </div>
+    </form>
+  </div>
+</section>
+<section class="globalNav">
+  <nav class="global">
+    <ul class="main">
+      <li><a class="list-title" routerLink="/shop">Shop</a>
+        <ul class="sub-menu">
+          <li><a routerLink="/shop">Coffee</a></li>
+          <li><a routerLink="/shop">Gear</a></li>
+          <li><a routerLink="/shop">Subscriptions</a></li>
+        </ul>
+      </li>
+      <li><a class="list-title" routerLink="/wholesale">Wholesale</a>
+        <ul class="sub-menu">
+          <li><a routerLink="/wholesale">Become a Wholesale Partner</a></li>
+        </ul>
+      </li>
+      <li><a class="list-title" routerLink="/about">About</a>
+        <ul class="sub-menu">
+          <li><a routerLink="/about">The Company</a></li>
+          <li><a routerLink="/about">Contact Us</a></li>
+          <li><a routerLink="/about">Jobs</a></li>
+          <li><a routerLink="/about">FAQ</a></li>
+          <li><a routerLink="/about">Privacy Policy</a></li>
+        </ul>
+      </li>
+      <li><a class="list-title">Locations</a>
+        <ul class="sub-menu">
+          <li><a target="_blank" href="https://goo.gl/maps/B6ARaFUbRKk">Mount Pleasant</a></li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+  <aside>
+    <ul>
+      <li id="gift-card-btn"><span>Gift Cards</span><br><a>Give a Gift Today</a></li>
+      <li><span>Social Media</span> <br>Follow Kaya</li>
+      <li><a href="https://twitter.com/kayacoffeehouse" class="icon"><i class="fab fa-twitter"></i></a><a href="https://www.facebook.com/kayacoffeehouses/" class="icon"><i class="fab fa-facebook"></i></a><a href="https://www.instagram.com/kayacoffeehouse"
+          class="icon"><i class="fab fa-instagram"></i></a></li>
+    </ul>
+  </aside>
+</section>
+<footer>
+  <div class="w-25">
+    <div id="logo-white"></div>
+    <p>
+      © 2014 Kaya Coffee House, All Rights Reserved
+    </p>
+  </div>
+  <div class="w-75">
+    <h3>
+      COFFEE... IN AN EARTH FRIENDLY WAY
+    </h3>
+  </div>
+</footer>
