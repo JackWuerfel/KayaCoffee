@@ -512,6 +512,8 @@ footer {
     line-height: 2.2em;
     font-family: Avenir;
     letter-spacing: 0.075em;
+    padding-left: 30px;
+    padding-right:30px;
   }
 
   p.error {
@@ -792,5 +794,17 @@ footer {
   .inner-wrapper h1 {
     font-size: 3em;
     margin-top: 0;
+  }
+  .left{
+    width: 100%;
+    float: none;
+    clear: both;
+    margin: 0px;
+  }
+  .right{
+    width: 100%;
+    float: none;
+    clear: both;
+    margin: 0px;
   }
 }
