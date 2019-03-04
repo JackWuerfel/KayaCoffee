@@ -1,4 +1,4 @@
-# Angular7 KayaCoffee
+# Kaya Coffee Angular App
 
 This is an angular app/website that has both authentication, user roles, and e-commerce ability.
 
