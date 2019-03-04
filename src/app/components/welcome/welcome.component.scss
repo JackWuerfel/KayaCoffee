@@ -714,9 +714,26 @@ footer {
   font-size: 1.2em;
   margin: 20px;
 }
-@media only screen and (max-width: 1025px) {
+@media only screen and (min-width: 1025px) {
+  li.largeOnly{
+    display: flex;
+  }
+  li.mobileOnly{
+    display: none!important;
+  }
+}
+@media only screen and (max-width: 1024px) {
+  li.largeOnly{
+    display: none!important;
+  }
+  li.mobileOnly{
+    display: block!important;
+  }
   .globalNav {
     display: none;
+  }
+  ul{
+    display: block!important;
   }
 }
 @media only screen and (max-width: 960px) {

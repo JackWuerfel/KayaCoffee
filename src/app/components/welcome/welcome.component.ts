@@ -10,6 +10,7 @@ import { ToastrService } from 'ngx-toastr'; // Alert message using NGX toastr
 })
 export class WelcomeComponent implements OnInit {
   public emaillistForm: FormGroup;  // Define FormGroup to email's form
+  public tabsToggle: boolean = false;
   public tab1: boolean = false;
   public tab2: boolean = false;
   public tab3: boolean = false;
@@ -65,6 +66,10 @@ export class WelcomeComponent implements OnInit {
     this.toastr.success(this.emaillistForm.controls['email'].value + ' successfully added!');
     this.ResetForm();  // Reset form when clicked on reset button
     this.Join = false;
+  }
+
+  clickToogle() {
+    this.tabsToggle = !this.tabsToggle; 
   }
 
   clickAbout() {

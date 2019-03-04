@@ -43,22 +43,44 @@
 <section class="tabs">
   <nav>
     <ul>
-      <li (click)="clickAbout()">
+      <li (click)="clickToogle()" class="mobileOnly">
+        <a [ngClass]="tabsToggle  ? 'isActive' : 'noActive'"> <i class="icon fas fa-bars"></i><span>Tabs</span></a>
+      </li>
+      <li (click)="clickAbout()" class="largeOnly">
         <a [ngClass]="aboutActive ? 'isActive' : 'noActive'"> <i class="icon fas fa-home"></i><span>About Us</span></a>
       </li>
-      <li (click)="clickMenu()">
-        <a [ngClass]="menuActive ? 'isActive' : 'noActive'"><i class="icon fas fa-coffee"></i><span>Menu</span></a>
-      </li>
-      <li (click)="clickConnect()">
-        <a [ngClass]="connectActive ? 'isActive' : 'noActive'"><i class="icon fas fa-cloud-upload-alt"></i><span>Connect</span></a>
-      </li>
-      <li (click)="clickEvent()">
-        <a [ngClass]="eventActive ? 'isActive' : 'noActive'"><i class="icon far fa-calendar-check"></i><span>Events</span></a>
-      </li>
-      <li (click)="clickGallery()">
-        <a [ngClass]="galleryActive ? 'isActive' : 'noActive'"><i class="icon fas fa-camera-retro"></i><span>Gallery</span></a>
-      </li>
+    <li (click)="clickMenu()" class="largeOnly">
+      <a [ngClass]="menuActive ? 'isActive' : 'noActive'"><i class="icon fas fa-coffee"></i><span>Menu</span></a>
+    </li>
+    <li (click)="clickConnect()" class="largeOnly">
+      <a [ngClass]="connectActive ? 'isActive' : 'noActive'"><i class="icon fas fa-cloud-upload-alt"></i><span>Connect</span></a>
+    </li>
+    <li (click)="clickEvent()" class="largeOnly">
+      <a [ngClass]="eventActive ? 'isActive' : 'noActive'"><i class="icon far fa-calendar-check"></i><span>Events</span></a>
+    </li>
+    <li (click)="clickGallery()" class="largeOnly">
+      <a [ngClass]="galleryActive ? 'isActive' : 'noActive'"><i class="icon fas fa-camera-retro"></i><span>Gallery</span></a>
+    </li>
     </ul>
+    <div [ngClass]="tabsToggle ? 'show' : 'hide'">
+<ul class="mobileUl">
+    <li (click)="clickAbout()" class="mobileOnly">
+      <a [ngClass]="aboutActive ? 'isActive' : 'noActive'"> <i class="icon fas fa-home"></i><span>About Us</span></a>
+    </li>
+    <li (click)="clickMenu()" class="mobileOnly">
+      <a [ngClass]="menuActive ? 'isActive' : 'noActive'"><i class="icon fas fa-coffee"></i><span>Menu</span></a>
+    </li>
+    <li (click)="clickConnect()" class="mobileOnly">
+      <a [ngClass]="connectActive ? 'isActive' : 'noActive'"><i class="icon fas fa-cloud-upload-alt"></i><span>Connect</span></a>
+    </li>
+    <li (click)="clickEvent()" class="mobileOnly">
+      <a [ngClass]="eventActive ? 'isActive' : 'noActive'"><i class="icon far fa-calendar-check"></i><span>Events</span></a>
+    </li>
+    <li (click)="clickGallery()" class="mobileOnly">
+      <a [ngClass]="galleryActive ? 'isActive' : 'noActive'"><i class="icon fas fa-camera-retro"></i><span>Gallery</span></a>
+    </li>
+  </ul>
+  </div>
   </nav>
 </section>
 <!-- Introduction Content -->
