@@ -28,7 +28,7 @@
   </nav>
   <div class="hero-wrapper">
     <div class="inner-wrapper">
-      <div id="logo"> </div>
+      <div id="logo"></div>
       <h1>"Coffee. Tea. Food."</h1>
       <p>
         "That’s what we do. And we try to do it in the most delicious, earth-friendly way we can."
@@ -84,9 +84,9 @@
   </nav>
 </section>
 <!-- Introduction Content -->
-<section class="main-wrapper">
+<section id="main-wrapper" class="main-wrapper">
   <!-- Modal Content -->
-  <div class="modal" [ngClass]="contactTab ? 'show' : 'hide'">
+  <div class="modal" role="dialog" [ngClass]="contactTab ? 'show' : 'hide'">
     <div class="modal--content">
       <a class="btn-close" (click)="clickContact()">
         x
@@ -131,7 +131,7 @@
       </div>
     </div>
   </div>
-  <div class="modal" [ngClass]="searchTab ? 'show' : 'hide'">
+  <div class="modal" role="dialog" [ngClass]="searchTab ? 'show' : 'hide'">
     <div class="modal--content">
       <a class="btn-close" (click)="clickSearch()">
         x
@@ -152,7 +152,7 @@
       </div>
     </div>
   </div>
-  <div class="modal" [ngClass]="grid1Modal ? 'show' : 'hide'">
+  <div class="modal" role="dialog" [ngClass]="grid1Modal ? 'show' : 'hide'">
     <div class="modal--content">
       <a class="btn-close" (click)="clickGrid1()">
         x
@@ -160,7 +160,7 @@
       <img style="width:80%;border-radius:5px;" src="https://firebasestorage.googleapis.com/v0/b/kaya-coffee.appspot.com/o/gallery%2Fgrid--1__bg.jpg?alt=media&token=c961c811-3257-4395-8adb-556eceecb70a" />
     </div>
   </div>
-  <div class="modal" [ngClass]="grid2Modal ? 'show' : 'hide'">
+  <div class="modal" role="dialog" [ngClass]="grid2Modal ? 'show' : 'hide'">
     <div class="modal--content">
       <a class="btn-close" (click)="clickGrid2()">
         x
@@ -192,7 +192,7 @@
       <img style="width:40%;border-radius:5px;" src="https://firebasestorage.googleapis.com/v0/b/kaya-coffee.appspot.com/o/gallery%2Fgrid--5__bg.jpg?alt=media&token=7b312f2b-1e76-440f-b0b0-5ff48ce8ca3e" />
     </div>
   </div>
-  <div class="modal" [ngClass]="grid6Modal ? 'show' : 'hide'">
+  <div class="modal" role="dialog" [ngClass]="grid6Modal ? 'show' : 'hide'">
     <div class="modal--content">
       <a class="btn-close" (click)="clickGrid6()">
         x
