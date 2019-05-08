@@ -1,6 +1,6 @@
-import { Component, OnInit, HostListener, Inject } from '@angular/core';
+import { Component, OnInit, HostListener } from '@angular/core';
 import { CrudService } from '../../shared/services/crud.service';    // CRUD services API
-import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms'; // Reactive form services
+import { FormBuilder, FormGroup, Validators } from '@angular/forms'; // Reactive form services
 import { ToastrService } from 'ngx-toastr'; // Alert message using NGX toastr
 
 @Component({
@@ -180,7 +180,7 @@ export class WelcomeComponent implements OnInit {
   }
 
   @HostListener('window:scroll', ['$event'])
-  onWindowScroll(e) {
+  onWindowScroll() {
     if (window.pageYOffset > 400) {
       let element = document.getElementById('navbar');
       element.classList.add('sticky');
