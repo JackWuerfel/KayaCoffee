@@ -2,7 +2,13 @@ import { Component, OnInit, HostListener, ViewChild, AfterViewInit } from '@angu
 import { CrudService } from '../../shared/services/crud.service';    // CRUD services API
 import { FormBuilder, FormGroup, Validators } from '@angular/forms'; // Reactive form services
 import { ToastrService } from 'ngx-toastr'; // Alert message using NGX toastr
+
+//Welcome Page Imports
 import { WelcomeHeader } from '../../shared/pageComponents/welcomeComponents/welcomeHeader/welcomeHeader.component';
+
+//Global Imports
+import { Navigation } from '../../shared/pageComponents/global/navigation/navigation.component';
+import { Modals } from '../../shared/pageComponents/global/modals/modals.component';
 import { Footer } from '../../shared/pageComponents/global/footer/footer.component';
 
 @Component({
@@ -13,6 +19,8 @@ import { Footer } from '../../shared/pageComponents/global/footer/footer.compone
 export class WelcomeComponent implements OnInit, AfterViewInit {
   
   @ViewChild(WelcomeHeader) header: WelcomeHeader;
+  @ViewChild(Navigation) navigation: Navigation;
+  @ViewChild(Modals) modals: Modals;
   @ViewChild(Footer) footer: Footer;
   
   public emaillistForm: FormGroup;  // Define FormGroup to email's form
@@ -22,8 +30,6 @@ export class WelcomeComponent implements OnInit, AfterViewInit {
   public tab3: boolean = false;
   public tab4: boolean = false;
   public tab5: boolean = false;
-  public contactTab: boolean = false;
-  public searchTab: boolean = false;
   public Join: boolean = false;
   public grid1Modal: boolean = false;
   public grid2Modal: boolean = false;
@@ -140,17 +146,7 @@ export class WelcomeComponent implements OnInit, AfterViewInit {
     this.connectActive = false;
     this.eventActive = false;
   }
-
-  clickContact() {
-    this.contactTab = !this.contactTab;
-    this.searchTab = false;
-  }
-
-  clickSearch() {
-    this.searchTab = !this.searchTab;
-    this.contactTab = false;
-  }
-
+  
   clickJoin() {
     this.Join = !this.Join;
   }
