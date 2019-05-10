@@ -19,7 +19,15 @@ export class WelcomeHeader implements OnInit {
   ngOnInit() {
              // Call Emaillist form when component is ready
   }
+  clickContact() {
+    this.contactTab = !this.contactTab;
+    this.searchTab = false;
+  }
 
+  clickSearch() {
+    this.searchTab = !this.searchTab;
+    this.contactTab = false;
+  }
 
   @HostListener('window:scroll', ['$event'])
   onWindowScroll() {
