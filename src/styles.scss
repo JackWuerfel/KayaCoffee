@@ -16,6 +16,9 @@ $font-AV: Avenir;
   box-sizing: border-box;
 }
 
+.text-center {
+  text-align: center;
+}
 body {
   margin: 0;
   font-size: 14px;
@@ -232,4 +235,83 @@ button{
   width: 50px;
   transition: color 0.1s linear 0s, background-color 0.1s linear 0s, border-color 0.1s linear 0s;
   text-align: center;
+}
+
+.row-inner {
+  display: flex;
+  width: 100%;
+  line-height: 1.42857143;
+  vertical-align: top;
+  border-bottom: 1px solid #ddd;
+  padding-top: 10px;
+  padding-bottom: 10px;
+
+  &:hover {
+    background: #eee;
+  }
+
+  p {
+    margin: 0 auto;
+    padding-left: 10px;
+  }
+}
+
+.w-25 {
+  width: 25%;
+}
+
+.w-50 {
+  width: 50%;
+  padding-left: 25px;
+  padding-right: 25px;
+}
+
+.columnTitle {
+  text-align: left;
+  vertical-align: bottom;
+  border-bottom: 2px solid #ddd;
+  padding-bottom: 10px;
+  font-weight: bold;
+}
+
+th {
+  text-align: left;
+  vertical-align: bottom;
+  border-bottom: 2px solid #ddd;
+  padding-bottom: 10px;
+}
+
+td {
+  line-height: 1.42857143;
+  vertical-align: top;
+  border-bottom: 1px solid #ddd;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.menuTitle {
+  text-align: left;
+  font-size: 1.8em;
+  font-weight: bold;
+  margin-bottom: 0;
+}
+
+
+  .table {
+    width: 100%;
+  }
+
+  .row-header {
+    display: flex;
+    width: 100%;
+    margin-bottom: -15px;
+
+    p {
+      padding-left: 10px;
+    }
+  }
+
+
+.subTitle {
+  margin-top: -20px;
 }

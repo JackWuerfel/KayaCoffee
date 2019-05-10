@@ -10,36 +10,6 @@ $box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12); 
 .text-center {
   text-align: center;
 }
-
-.hero-wrapper {
-  padding: 45px 0;
-  background: url("https://firebasestorage.googleapis.com/v0/b/kaya-coffee.appspot.com/o/homepage-alt.jpg?alt=media&token=9aa67b76-079a-4254-a480-8f0a691ab548") no-repeat 50% 50%;
-  font-family: 'Josefin Slab';
-  color: white;
-  -moz-background-size: cover;
-  -webkit-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-  user-select: none;
-  margin-top: -100px;
-
-  #logo {
-    background: url("https://firebasestorage.googleapis.com/v0/b/kaya-coffee.appspot.com/o/kaya_texturedLogo.png?alt=media&token=71feca10-d0a5-4464-b2f7-67b86e9c589e") no-repeat 50% 50%;
-    height: 450px;
-    margin-bottom: -50px;
-    -moz-background-size: contain;
-    -webkit-background-size: contain;
-    -o-background-size: contain;
-    background-size: contain;
-  }
-}
-
-.show-for-mobile {
-  display: none;
-}
 // Gallery Styles
 
 .grid-1 {
@@ -430,6 +400,12 @@ hr {
         box-shadow: $box-shadow;
       }
     }
+  }
+  
+  .w-50 {
+    width: 50%;
+    padding-left: 25px;
+    padding-right: 25px;
   }
 
   .columnTitle {
