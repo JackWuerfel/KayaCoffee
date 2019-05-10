@@ -1,14 +1,20 @@
-import { Component, OnInit, HostListener } from '@angular/core';
+import { Component, OnInit, HostListener, ViewChild, AfterViewInit } from '@angular/core';
 import { CrudService } from '../../shared/services/crud.service';    // CRUD services API
 import { FormBuilder, FormGroup, Validators } from '@angular/forms'; // Reactive form services
 import { ToastrService } from 'ngx-toastr'; // Alert message using NGX toastr
+import { WelcomeHeader } from '../../shared/pageComponents/welcomeComponents/welcomeHeader/welcomeHeader.component';
+import { Footer } from '../../shared/pageComponents/global/footer/footer.component';
 
 @Component({
   selector: 'app-welcome',
   templateUrl: './welcome.component.html',
-  styleUrls: ['./welcome.component.scss']
+  styleUrls: ['./welcome.component.scss'],
 })
-export class WelcomeComponent implements OnInit {
+export class WelcomeComponent implements OnInit, AfterViewInit {
+  
+  @ViewChild(WelcomeHeader) header: WelcomeHeader;
+  @ViewChild(Footer) footer: Footer;
+  
   public emaillistForm: FormGroup;  // Define FormGroup to email's form
   public tabsToggle: boolean = false;
   public tab1: boolean = false;
@@ -42,6 +48,8 @@ export class WelcomeComponent implements OnInit {
   ngOnInit() {
     this.crudApi.GetEmailsList();
     this.emaillisForm();              // Call Emaillist form when component is ready
+  }
+  ngAfterViewInit() {
   }
 
   // Reactive Emaillist form

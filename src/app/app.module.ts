@@ -19,6 +19,12 @@ import { AddProductComponent } from './components/add-product/add-product.compon
 import { EditProductComponent } from './components/edit-product/edit-product.component';
 import { ProductsListComponent } from './components/products-list/products-list.component';
 
+// Page Components
+import { WelcomeHeader } from './shared/pageComponents/welcomeComponents/welcomeHeader/welcomeHeader.component';
+import { Footer } from './shared/pageComponents/global/footer/footer.component';
+import { Modals } from './shared/pageComponents/global/modals/modals.component';
+
+
 // Firebase services + enviorment module
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
@@ -48,7 +54,10 @@ import { NgxPaginationModule } from 'ngx-pagination';
     WelcomeComponent,
     AddProductComponent,
     EditProductComponent,
-    ProductsListComponent
+    ProductsListComponent,
+    WelcomeHeader,
+    Footer,
+    Modals
   ],
   imports: [
     BrowserModule,
