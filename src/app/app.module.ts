@@ -23,7 +23,7 @@ import { ProductsListComponent } from './components/products-list/products-list.
 import { WelcomeHeader } from './shared/pageComponents/welcomeComponents/welcomeHeader/welcomeHeader.component';
 import { Footer } from './shared/pageComponents/global/footer/footer.component';
 import { Modals } from './shared/pageComponents/global/modals/modals.component';
-
+import { Navigation } from './shared/pageComponents/global/navigation/navigation.component';
 
 // Firebase services + enviorment module
 import { AngularFireModule } from '@angular/fire';
@@ -57,7 +57,8 @@ import { NgxPaginationModule } from 'ngx-pagination';
     ProductsListComponent,
     WelcomeHeader,
     Footer,
-    Modals
+    Modals,
+    Navigation
   ],
   imports: [
     BrowserModule,
