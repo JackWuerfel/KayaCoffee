@@ -213,7 +213,9 @@ button{
     padding: 25px;
     border-radius: 5px;
     outline: 0;
-    width: 960px;
+    display: block;
+    width: 100%;
+    max-width: 960px;
     top:1vh;
   }
 }
