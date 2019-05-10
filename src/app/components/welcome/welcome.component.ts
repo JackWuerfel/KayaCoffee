@@ -2,7 +2,8 @@ import { Component, OnInit, HostListener, ViewChild, AfterViewInit } from '@angu
 import { CrudService } from '../../shared/services/crud.service';    // CRUD services API
 import { FormBuilder, FormGroup, Validators } from '@angular/forms'; // Reactive form services
 import { ToastrService } from 'ngx-toastr'; // Alert message using NGX toastr
-import { PageHero } from '../../shared/pageComponents/welcomeComponents/PageHero/PageHero.component';
+import { WelcomeHeader } from '../../shared/pageComponents/welcomeComponents/welcomeHeader/welcomeHeader.component';
+import { Footer } from '../../shared/pageComponents/global/footer/footer.component';
 
 @Component({
   selector: 'app-welcome',
@@ -11,7 +12,8 @@ import { PageHero } from '../../shared/pageComponents/welcomeComponents/PageHero
 })
 export class WelcomeComponent implements OnInit, AfterViewInit {
   
-  @ViewChild(PageHero) child: PageHero;
+  @ViewChild(WelcomeHeader) header: WelcomeHeader;
+  @ViewChild(Footer) footer: Footer;
   
   public emaillistForm: FormGroup;  // Define FormGroup to email's form
   public tabsToggle: boolean = false;
