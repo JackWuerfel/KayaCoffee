@@ -26,5 +26,37 @@ export class Modals implements OnInit {
   ngOnInit() {
              // Call Emaillist form when component is ready
   }
+  
+  clickGrid1() {
+    this.grid1Modal = !this.grid1Modal;
+  }
+
+  clickGrid2() {
+    this.grid2Modal = !this.grid2Modal;
+  }
+
+  clickGrid3() {
+    this.grid3Modal = !this.grid3Modal;
+  }
+
+  clickGrid4() {
+    this.grid4Modal = !this.grid4Modal;
+  }
+
+  clickGrid5() {
+    this.grid5Modal = !this.grid5Modal;
+  }
+
+  clickGrid6() {
+    this.grid6Modal = !this.grid6Modal;
+  }
+
+  clickGrid7() {
+    this.grid7Modal = !this.grid7Modal;
+  }
+
+  clickGrid8() {
+    this.grid8Modal = !this.grid8Modal;
+  }
 
 }
