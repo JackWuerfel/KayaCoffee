@@ -4,11 +4,11 @@ import { FormBuilder } from '@angular/forms'; // Reactive form services
 import { ToastrService } from 'ngx-toastr'; // Alert message using NGX toastr
 
 @Component({
-  selector: 'Modals',
-  templateUrl: './modals.component.html',
-  styleUrls: ['./modals.component.scss']
+  selector: 'Gallery',
+  templateUrl: './gallery.component.html',
+  styleUrls: ['./gallery.component.scss']
 })
-export class Modals implements OnInit {
+export class Gallery implements OnInit {
   public grid1Modal: boolean = false;
   public grid2Modal: boolean = false;
   public grid3Modal: boolean = false;

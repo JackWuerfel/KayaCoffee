@@ -8,7 +8,7 @@ import { WelcomeHeader } from '../../shared/pageComponents/welcomeComponents/wel
 
 //Global Imports
 import { Navigation } from '../../shared/pageComponents/global/navigation/navigation.component';
-import { Modals } from '../../shared/pageComponents/global/modals/modals.component';
+import { Gallery } from '../../shared/pageComponents/welcomeComponents/Gallery/gallery.component';
 import { SubNavigation } from '../../shared/pageComponents/global/subNavigation/subNavigation.component';
 import { Footer } from '../../shared/pageComponents/global/footer/footer.component';
 
@@ -21,7 +21,7 @@ export class WelcomeComponent implements OnInit, AfterViewInit {
   
   @ViewChild(WelcomeHeader) header: WelcomeHeader;
   @ViewChild(Navigation) navigation: Navigation;
-  @ViewChild(Modals) modals: Modals;
+  @ViewChild(Gallery) gallery: Gallery;
   @ViewChild(SubNavigation) SubNavigation: SubNavigation;
   @ViewChild(Footer) footer: Footer;
   
