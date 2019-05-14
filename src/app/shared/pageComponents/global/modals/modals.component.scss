@@ -7,90 +7,179 @@ $font-JS: Josefin Slab;
 $font-AV: Avenir;
 $box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12); // Header
 
-footer {
-  background: url("https://firebasestorage.googleapis.com/v0/b/kaya-coffee.appspot.com/o/branding%2Ffooter.jpg?alt=media&token=3c0862f0-1256-493c-996e-8676cedfa492") no-repeat 50% 50%;
-  -moz-background-size: cover;
-  -webkit-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  color: white;
-  padding: 50px 0;
-  width: 100%;
-  text-align: center;
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-  display: flex;
-  font-family: $font-JS;
-  font-weight: bold;
-  user-select: none;
-  box-shadow: inset 0 1px 0 #fcfcfc, 0 8px 8px -8px #c9c9c9, 0 12px 12px -8px #e2e2e2;
-
-  #logo-white {
-    background: url("https://firebasestorage.googleapis.com/v0/b/kaya-coffee.appspot.com/o/kaya_texturedLogo_responsiveWhite.png?alt=media&token=70b8c9ab-ae31-4db3-b673-c4b2cad824b2");
-    height: 150px;
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
+// Gallery Styles
+.grid{
+  margin: auto 20px;
+  height: 175px;
+  border-radius: 5px;
+  &:hover {
+    color: #2cc185;
+    box-shadow: $box-shadow;
+    cursor: pointer;
   }
-
-  h3 {
-    font-size: 2.6em;
-    font-family: $font-JS;
-    text-align: right;
-    padding-right: 55px;
-    padding-top: 30px;
-    font-weight: bold;
+  &-1{
+    @extend .grid;
+      background: url("https://firebasestorage.googleapis.com/v0/b/kaya-coffee.appspot.com/o/gallery%2Fgrid--1__bg.jpg?alt=media&token=c961c811-3257-4395-8adb-556eceecb70a") no-repeat 25% 75%;
+  }
+  &-2{
+    @extend .grid;
+      background: url("https://firebasestorage.googleapis.com/v0/b/kaya-coffee.appspot.com/o/gallery%2Fgrid--2__bg.jpg?alt=media&token=e0eeb240-1ec7-44ae-a17c-a0f13ca6a1de") no-repeat 60% 50%;
+  }
+  &-3{
+    @extend .grid;
+      background: url("https://firebasestorage.googleapis.com/v0/b/kaya-coffee.appspot.com/o/gallery%2Fgrid--3__bg.jpg?alt=media&token=3fbd0a15-07d8-4992-a676-ef720387f988") no-repeat 50% 50%;
+  }
+  &-4{
+    @extend .grid;
+      background: url("https://firebasestorage.googleapis.com/v0/b/kaya-coffee.appspot.com/o/gallery%2Fgrid--4__bg.jpg?alt=media&token=c6f7807a-094b-4311-ae8c-c33c908d271c") no-repeat 50% 24%;
+  }
+  &-5{
+    @extend .grid;
+      background: url("https://firebasestorage.googleapis.com/v0/b/kaya-coffee.appspot.com/o/gallery%2Fgrid--5__bg.jpg?alt=media&token=7b312f2b-1e76-440f-b0b0-5ff48ce8ca3e") no-repeat 50% 50%;
+  }
+  &-6{
+    @extend .grid;
+      background: url("https://firebasestorage.googleapis.com/v0/b/kaya-coffee.appspot.com/o/gallery%2Fgrid--6__bg.jpg?alt=media&token=1b3f7497-2f3d-49e6-b3bd-d8411c804abd") no-repeat 90% 60%;
+  }
+  &-7{
+    @extend .grid;
+      background: url("https://firebasestorage.googleapis.com/v0/b/kaya-coffee.appspot.com/o/gallery%2Fgrid--7__bg.jpg?alt=media&token=c9a7ea7c-b6b3-44d8-96e7-890d6e4a5ad8") no-repeat 50% 50%;
+  }
+  &-8{
+    @extend .grid;
+      background: url("https://firebasestorage.googleapis.com/v0/b/kaya-coffee.appspot.com/o/gallery%2Fgrid--8__bg.jpg?alt=media&token=c2b69098-7c49-4c47-af33-985909cc8a0b") no-repeat 20% 65%;
   }
 }
+
+
+.inner-wrapper {
+  max-width: 960px;
+  margin: 25px auto;
+  display: block;
+  text-align: center;
+
+  h1 {
+    font-size: 6.5em;
+    line-height: 60px;
+    font-weight: 700;
+    margin-bottom: 0;
+    font-style: italic;
+    text-shadow: 3px 3px #000000;
+  }
+
+  p {
+    font-size: 1.27em;
+    line-height: 1.8em;
+    font-family: $font-AV;
+    font-weight: bold;
+    letter-spacing: 0.075em;
+    font-style: italic;
+    text-shadow: 1px 2px #000000;
+  }
+
+  h2 {
+    font-family: $font-JS;
+    font-size: 2.45em;
+    margin-top: -5px;
+    margin-bottom: -5px;
+    text-shadow: 1px 2px #000000;
+  }
+}
+
+h3 {
+  font-family: $font-JS;
+  font-size: 4.2em;
+  line-height: 72px;
+  font-weight: bold;
+  margin-bottom: 14px;
+  margin-top: 0;
+}
+
+.table {
+  width: 100%;
+}
+
+.row-header {
+  display: flex;
+  width: 100%;
+  margin-bottom: -15px;
+
+  p {
+    padding-left: 10px;
+  }
+}
+
+.row-inner {
+  display: flex;
+  width: 100%;
+  line-height: 1.42857143;
+  vertical-align: top;
+  border-bottom: 1px solid #ddd;
+  padding-top: 10px;
+  padding-bottom: 10px;
+
+  &:hover {
+    background: #eee;
+  }
+
+  p {
+    margin: 0 auto;
+    padding-left: 10px;
+  }
+}
+
+.row-normal {
+  display: flex;
+  width: 100%;
+  line-height: 1.42857143;
+  vertical-align: top;
+  padding-top: 10px;
+  padding-bottom: 10px;
+
+  p {
+    margin: 0 auto;
+    padding-left: 10px;
+    text-align: center;
+  }
+}
+
+.w-25 {
+  width: 25%;
+}
+
+.w-50 {
+  width: 50%;
+  padding-left: 25px;
+  padding-right: 25px;
+}
+
 @media only screen and (min-width: 1025px) {
-  li.largeOnly{
+  li.largeOnly {
     display: flex;
   }
-  li.mobileOnly{
+
+  li.mobileOnly {
     display: none!important;
   }
 }
 @media only screen and (max-width: 1024px) {
-  li.largeOnly{
+  li.largeOnly {
     display: none!important;
   }
-  li.mobileOnly{
+
+  li.mobileOnly {
     display: block!important;
   }
+
   .globalNav {
     display: none;
   }
-  ul{
+
+  ul {
     display: block!important;
   }
 }
 @media only screen and (max-width: 960px) {
-  .hero-wrapper {
-    margin-top: 0;
-  }
-
-  .navbar {
-    display: none;
-  }
-
-  footer {
-    .w-25 {
-      width: 100%;
-    }
-
-    .w-75 {
-      display: none;
-    }
-  }
-
-  .hero-wrapper #logo {
-    background-image: url("https://firebasestorage.googleapis.com/v0/b/kaya-coffee.appspot.com/o/kaya_texturedLogo_responsive.png?alt=media&token=e5e8fc85-6879-48b0-bfbb-3c4a6c786639");
-    height: 300px;
-    margin-bottom: -70px;
-    background-size: contain;
-    background-repeat: none;
-  }
 
   .inner-wrapper h1 {
     font-size: 3.5em;
@@ -101,7 +190,6 @@ footer {
     padding-right: 20px;
   }
 
-  .main-wrapper {
     .row-inner {
       display: block;
 
@@ -126,19 +214,54 @@ footer {
       width: 100%;
       text-align: center;
     }
-  }
 }
-
-@media only screen and (max-width: 600px) {
-  .hero-wrapper #logo {
-    background-image: url("https://firebasestorage.googleapis.com/v0/b/kaya-coffee.appspot.com/o/kaya_texturedLogo_responsive.png?alt=media&token=e5e8fc85-6879-48b0-bfbb-3c4a6c786639");
-    height: 200px;
-    margin-bottom: -0px;
-    background-size: cover;
-    background-repeat: none;
+@media only screen and (max-width: 760px) {
+  .grid-1 {
+    margin: 0 auto 10px;
   }
-  
-  .show-for-mobile{
+
+  .grid-2 {
+    margin: 0 auto 10px;
+  }
+
+  .grid-3 {
+    margin: 0 auto 10px;
+  }
+
+  .grid-4 {
+    margin: 0 auto;
+    margin-bottom: -10px;
+  }
+
+  .grid-5 {
+    margin: 0 auto 10px;
+  }
+
+  .grid-6 {
+    margin: 0 auto 10px;
+  }
+
+  .grid-7 {
+    margin: 0 auto 10px;
+  }
+
+  .grid-8 {
+    margin: 0 auto 10px;
+  }
+
+    .row-normal {
+      display: block;
+    }
+
+    .card {
+      display: block;
+      margin: 0 auto 20px;
+      padding: 20px;
+    }
+}
+@media only screen and (max-width: 600px) {
+
+  .show-for-mobile {
     display: block;
   }
 
@@ -146,16 +269,18 @@ footer {
     font-size: 3em;
     margin-top: 0;
   }
-  .left{
+
+  .left {
     width: 100%;
     float: none;
     clear: both;
-    margin: 0px;
+    margin: 0;
   }
-  .right{
+
+  .right {
     width: 100%;
     float: none;
     clear: both;
-    margin: 0px;
+    margin: 0;
   }
 }

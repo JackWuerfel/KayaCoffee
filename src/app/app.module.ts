@@ -24,6 +24,7 @@ import { WelcomeHeader } from './shared/pageComponents/welcomeComponents/welcome
 import { Footer } from './shared/pageComponents/global/footer/footer.component';
 import { Modals } from './shared/pageComponents/global/modals/modals.component';
 import { Navigation } from './shared/pageComponents/global/navigation/navigation.component';
+import { SubNavigation } from './shared/pageComponents/global/subNavigation/subNavigation.component';
 
 // Firebase services + enviorment module
 import { AngularFireModule } from '@angular/fire';
@@ -58,7 +59,8 @@ import { NgxPaginationModule } from 'ngx-pagination';
     WelcomeHeader,
     Footer,
     Modals,
-    Navigation
+    Navigation,
+    SubNavigation
   ],
   imports: [
     BrowserModule,

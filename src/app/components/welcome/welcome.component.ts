@@ -9,6 +9,7 @@ import { WelcomeHeader } from '../../shared/pageComponents/welcomeComponents/wel
 //Global Imports
 import { Navigation } from '../../shared/pageComponents/global/navigation/navigation.component';
 import { Modals } from '../../shared/pageComponents/global/modals/modals.component';
+import { SubNavigation } from '../../shared/pageComponents/global/subNavigation/subNavigation.component';
 import { Footer } from '../../shared/pageComponents/global/footer/footer.component';
 
 @Component({
@@ -21,6 +22,7 @@ export class WelcomeComponent implements OnInit, AfterViewInit {
   @ViewChild(WelcomeHeader) header: WelcomeHeader;
   @ViewChild(Navigation) navigation: Navigation;
   @ViewChild(Modals) modals: Modals;
+  @ViewChild(SubNavigation) SubNavigation: SubNavigation;
   @ViewChild(Footer) footer: Footer;
   
   public emaillistForm: FormGroup;  // Define FormGroup to email's form

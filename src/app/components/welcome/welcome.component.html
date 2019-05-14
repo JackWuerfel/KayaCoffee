@@ -610,7 +610,7 @@
         <div class="w-50 card">
           <i class="fas fa-quote-left"></i>
           <p>
-            When Kaya got into the roasting business, we were the first to benefit. We now serve a higher quality product that makes every customer smile!
+            When Kaya got into the roasting business, we were the first to benefit. We now serve a higher quality product that has left customers coming back for more!
           </p>
           <hr />
           <img class="testUser" src="https://firebasestorage.googleapis.com/v0/b/kaya-coffee.appspot.com/o/test-2.png?alt=media&token=7bd46aa4-384e-45d5-9b9e-8f3afc47416a" />
@@ -673,31 +673,7 @@
     </ul>
   </div>
   <div [ngClass]="tab5 ? 'show' : 'hide'">
-    <h3 class="text-center">
-      Get A Peak At Our New Space!
-    </h3>
-    <div class="table">
-      <div class="row-normal">
-        <div class="w-25 grid-1" (click)="clickGrid1()">
-        </div>
-        <div class="w-25 grid-2" (click)="clickGrid2()">
-        </div>
-        <div class="w-25 grid-3" (click)="clickGrid3()">
-        </div>
-        <div class="w-25 grid-4" (click)="clickGrid4()">
-        </div>
-      </div>
-      <div class="row-normal">
-        <div class="w-25 grid-5" (click)="clickGrid5()">
-        </div>
-        <div class="w-25 grid-6" (click)="clickGrid6()">
-        </div>
-        <div class="w-25 grid-7" (click)="clickGrid7()">
-        </div>
-        <div class="w-25 grid-8" (click)="clickGrid8()">
-        </div>
-      </div>
-    </div>
+    <Modals></Modals>
   </div>
 </section>
 <section class="newsletter">
@@ -719,44 +695,5 @@
     </form>
   </div>
 </section>
-<section class="globalNav">
-  <nav class="global">
-    <ul class="main">
-      <li><a class="list-title" routerLink="/shop">Shop</a>
-        <ul class="sub-menu">
-          <li><a routerLink="/shop">Coffee</a></li>
-          <li><a routerLink="/shop">Gear</a></li>
-          <li><a routerLink="/shop">Subscriptions</a></li>
-        </ul>
-      </li>
-      <li><a class="list-title" routerLink="/wholesale">Wholesale</a>
-        <ul class="sub-menu">
-          <li><a routerLink="/wholesale">Become a Wholesale Partner</a></li>
-        </ul>
-      </li>
-      <li><a class="list-title" routerLink="/about">About</a>
-        <ul class="sub-menu">
-          <li><a routerLink="/about">The Company</a></li>
-          <li><a routerLink="/about">Contact Us</a></li>
-          <li><a routerLink="/about">Jobs</a></li>
-          <li><a routerLink="/about">FAQ</a></li>
-          <li><a routerLink="/about">Privacy Policy</a></li>
-        </ul>
-      </li>
-      <li><a class="list-title">Locations</a>
-        <ul class="sub-menu">
-          <li><a target="_blank" href="https://goo.gl/maps/B6ARaFUbRKk">Mount Pleasant</a></li>
-        </ul>
-      </li>
-    </ul>
-  </nav>
-  <aside>
-    <ul>
-      <li id="gift-card-btn"><span>Gift Cards</span><br><a>Give a Gift Today</a></li>
-      <li><span>Social Media</span> <br>Follow Kaya</li>
-      <li><a href="https://twitter.com/kayacoffeehouse" class="icon"><i class="fab fa-twitter"></i></a><a href="https://www.facebook.com/kayacoffeehouses/" class="icon"><i class="fab fa-facebook"></i></a><a href="https://www.instagram.com/kayacoffeehouse"
-          class="icon"><i class="fab fa-instagram"></i></a></li>
-    </ul>
-  </aside>
-</section>
+<SubNavigation></SubNavigation>
 <Footer></Footer>

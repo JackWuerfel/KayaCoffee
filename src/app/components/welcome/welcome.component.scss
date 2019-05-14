@@ -10,111 +10,8 @@ $box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12); 
 .text-center {
   text-align: center;
 }
-// Gallery Styles
 
-.grid-1 {
-  margin: auto 20px;
-  height: 175px;
-  border-radius: 5px;
-  background: url("https://firebasestorage.googleapis.com/v0/b/kaya-coffee.appspot.com/o/gallery%2Fgrid--1__bg.jpg?alt=media&token=c961c811-3257-4395-8adb-556eceecb70a") no-repeat 25% 75%;
 
-  &:hover {
-    color: #2cc185;
-    box-shadow: $box-shadow;
-    cursor: pointer;
-  }
-}
-
-.grid-2 {
-  margin: auto 20px;
-  height: 175px;
-  border-radius: 5px;
-  background: url("https://firebasestorage.googleapis.com/v0/b/kaya-coffee.appspot.com/o/gallery%2Fgrid--2__bg.jpg?alt=media&token=e0eeb240-1ec7-44ae-a17c-a0f13ca6a1de") no-repeat 60% 50%;
-
-  &:hover {
-    color: #2cc185;
-    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
-    cursor: pointer;
-  }
-}
-
-.grid-3 {
-  margin: auto 20px;
-  height: 175px;
-  border-radius: 5px;
-  background: url("https://firebasestorage.googleapis.com/v0/b/kaya-coffee.appspot.com/o/gallery%2Fgrid--3__bg.jpg?alt=media&token=3fbd0a15-07d8-4992-a676-ef720387f988") no-repeat 50% 50%;
-
-  &:hover {
-    color: #2cc185;
-    box-shadow: $box-shadow;
-    cursor: pointer;
-  }
-}
-
-.grid-4 {
-  margin: auto 20px;
-  height: 175px;
-  border-radius: 5px;
-  background: url("https://firebasestorage.googleapis.com/v0/b/kaya-coffee.appspot.com/o/gallery%2Fgrid--4__bg.jpg?alt=media&token=c6f7807a-094b-4311-ae8c-c33c908d271c") no-repeat 50% 24%;
-
-  &:hover {
-    color: #2cc185;
-    box-shadow: $box-shadow;
-    cursor: pointer;
-  }
-}
-
-.grid-5 {
-  margin: auto 20px;
-  height: 175px;
-  border-radius: 5px;
-  background: url("https://firebasestorage.googleapis.com/v0/b/kaya-coffee.appspot.com/o/gallery%2Fgrid--5__bg.jpg?alt=media&token=7b312f2b-1e76-440f-b0b0-5ff48ce8ca3e") no-repeat 50% 50%;
-
-  &:hover {
-    color: #2cc185;
-    box-shadow: $box-shadow;
-    cursor: pointer;
-  }
-}
-
-.grid-6 {
-  margin: auto 20px;
-  height: 175px;
-  border-radius: 5px;
-  background: url("https://firebasestorage.googleapis.com/v0/b/kaya-coffee.appspot.com/o/gallery%2Fgrid--6__bg.jpg?alt=media&token=1b3f7497-2f3d-49e6-b3bd-d8411c804abd") no-repeat 90% 60%;
-
-  &:hover {
-    color: #2cc185;
-    box-shadow: $box-shadow;
-    cursor: pointer;
-  }
-}
-
-.grid-7 {
-  margin: auto 20px;
-  height: 175px;
-  border-radius: 5px;
-  background: url("https://firebasestorage.googleapis.com/v0/b/kaya-coffee.appspot.com/o/gallery%2Fgrid--7__bg.jpg?alt=media&token=c9a7ea7c-b6b3-44d8-96e7-890d6e4a5ad8") no-repeat 50% 50%;
-
-  &:hover {
-    color: #2cc185;
-    box-shadow: $box-shadow;
-    cursor: pointer;
-  }
-}
-
-.grid-8 {
-  margin: auto 20px;
-  height: 175px;
-  border-radius: 5px;
-  background: url("https://firebasestorage.googleapis.com/v0/b/kaya-coffee.appspot.com/o/gallery%2Fgrid--8__bg.jpg?alt=media&token=c2b69098-7c49-4c47-af33-985909cc8a0b") no-repeat 20% 65%;
-
-  &:hover {
-    color: #2cc185;
-    box-shadow: $box-shadow;
-    cursor: pointer;
-  }
-}
 // Nav Styles
 
 .tabs {
@@ -345,7 +242,7 @@ hr {
     display: block;
     font-size: 3.5em;
     float: left;
-    margin-bottom: 180px;
+    margin-bottom: 195px;
     margin-right: 20px;
     margin-left: 15px;
     color: #2cc185;
@@ -401,7 +298,7 @@ hr {
       }
     }
   }
-  
+
   .w-50 {
     width: 50%;
     padding-left: 25px;
@@ -474,82 +371,6 @@ hr {
   }
 }
 
-.globalNav {
-  text-align: center;
-  display: flex;
-  width: 100%;
-  padding-top: 40px;
-  padding-bottom: 60px;
-
-  ol,
-  ul {
-    list-style: none;
-  }
-
-  nav.global {
-    width: 80%;
-
-    ul.main li {
-      float: left;
-      width: calc(25% - 150px);
-      margin-right: 60px;
-      text-align: left;
-    }
-  }
-}
-
-.globalNav nav.global ul.main li ul li {
-  margin-right: 0;
-  width: 100%;
-  text-align: left;
-}
-
-.globalNav nav.global ul.main li ul li a {
-  color: #888888;
-  text-transform: none;
-}
-
-.globalNav nav.global ul.main li a {
-  text-decoration: none;
-  color: black;
-  line-height: 1.5;
-  font-size: 0.9rem;
-  text-transform: uppercase;
-  margin-bottom: 15px;
-  display: inline-block;
-}
-
-.globalNav aside {
-  width: 20%;
-  text-align: left;
-}
-
-.globalNav aside ul li {
-  margin-bottom: 30px;
-  font-size: 1.2em;
-  line-height: 1.5;
-}
-
-.globalNav aside ul li span {
-  text-transform: uppercase;
-  font-size: 0.9rem;
-  display: inline-block;
-  letter-spacing: 1px;
-  color: #888888;
-}
-
-.globalNav aside ul li a {
-  text-decoration: none;
-  color: black;
-  transition: color 0.25s cubic-bezier(0.28, 0, 0.18, 1);
-}
-
-.globalNav aside ul li a.icon {
-  font-size: 1.5rem;
-  margin-right: 15px;
-  display: inline;
-}
-
 .newsletterForm {
   display: block;
   position: relative;
@@ -619,8 +440,6 @@ hr {
   display: block;
   margin: -13px auto;
 }
-
-
 
 .event li {
   font-size: 1.2em;
@@ -716,14 +535,47 @@ hr {
   }
 }
 @media only screen and (max-width: 760px) {
+  .grid-1 {
+    margin: 0 auto 10px;
+  }
+
+  .grid-2 {
+    margin: 0 auto 10px;
+  }
+
+  .grid-3 {
+    margin: 0 auto 10px;
+  }
+
+  .grid-4 {
+    margin: 0 auto;
+    margin-bottom: -10px;
+  }
+
+  .grid-5 {
+    margin: 0 auto 10px;
+  }
+
+  .grid-6 {
+    margin: 0 auto 10px;
+  }
+
+  .grid-7 {
+    margin: 0 auto 10px;
+  }
+
+  .grid-8 {
+    margin: 0 auto 10px;
+  }
+
   .main-wrapper {
     .row-normal {
       display: block;
     }
+
     .card {
       display: block;
-      margin: 0 auto;
-      margin-bottom: 20px;
+      margin: 0 auto 20px;
       padding: 20px;
     }
   }
