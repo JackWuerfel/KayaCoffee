@@ -9,6 +9,7 @@ import { WelcomeHeader } from '../../shared/pageComponents/welcomeComponents/wel
 //Global Imports
 import { Navigation } from '../../shared/pageComponents/global/navigation/navigation.component';
 import { Gallery } from '../../shared/pageComponents/welcomeComponents/Gallery/gallery.component';
+import { NewsletterCallout } from '../../shared/pageComponents/global/newsletterCallout/newsletterCallout.component';
 import { SubNavigation } from '../../shared/pageComponents/global/subNavigation/subNavigation.component';
 import { Footer } from '../../shared/pageComponents/global/footer/footer.component';
 
@@ -22,8 +23,10 @@ export class WelcomeComponent implements OnInit, AfterViewInit {
   @ViewChild(WelcomeHeader) header: WelcomeHeader;
   @ViewChild(Navigation) navigation: Navigation;
   @ViewChild(Gallery) gallery: Gallery;
+  @ViewChild(NewsletterCallout) newsletterCallout: NewsletterCallout;
   @ViewChild(SubNavigation) SubNavigation: SubNavigation;
   @ViewChild(Footer) footer: Footer;
+
   
   public emaillistForm: FormGroup;  // Define FormGroup to email's form
   public tabsToggle: boolean = false;
@@ -33,14 +36,6 @@ export class WelcomeComponent implements OnInit, AfterViewInit {
   public tab4: boolean = false;
   public tab5: boolean = false;
   public Join: boolean = false;
-  public grid1Modal: boolean = false;
-  public grid2Modal: boolean = false;
-  public grid3Modal: boolean = false;
-  public grid4Modal: boolean = false;
-  public grid5Modal: boolean = false;
-  public grid6Modal: boolean = false;
-  public grid7Modal: boolean = false;
-  public grid8Modal: boolean = false;
   public aboutActive: boolean = true;
   public menuActive: boolean = false;
   public connectActive: boolean = false;
@@ -153,37 +148,6 @@ export class WelcomeComponent implements OnInit, AfterViewInit {
     this.Join = !this.Join;
   }
 
-  clickGrid1() {
-    this.grid1Modal = !this.grid1Modal;
-  }
-
-  clickGrid2() {
-    this.grid2Modal = !this.grid2Modal;
-  }
-
-  clickGrid3() {
-    this.grid3Modal = !this.grid3Modal;
-  }
-
-  clickGrid4() {
-    this.grid4Modal = !this.grid4Modal;
-  }
-
-  clickGrid5() {
-    this.grid5Modal = !this.grid5Modal;
-  }
-
-  clickGrid6() {
-    this.grid6Modal = !this.grid6Modal;
-  }
-
-  clickGrid7() {
-    this.grid7Modal = !this.grid7Modal;
-  }
-
-  clickGrid8() {
-    this.grid8Modal = !this.grid8Modal;
-  }
 
   @HostListener('window:scroll', ['$event'])
   onWindowScroll() {

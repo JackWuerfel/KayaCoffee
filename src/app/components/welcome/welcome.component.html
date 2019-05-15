@@ -676,24 +676,6 @@
     <Gallery></Gallery>
   </div>
 </section>
-<section class="newsletter">
-  <p>Sign up for our newsletter to receive special offers, event invitations, and more.</p>
-  <a class="btn" (click)="clickJoin()">
-    Join Now
-  </a>
-  <div [ngClass]="Join ? 'show' : 'hide'">
-    <form class="newsletterForm" [formGroup]="emaillistForm" (ngSubmit)="submitEmailData()" novalidate>
-      <!-- Declared formGroup="productForm" to create Reactive form group, novalidate is used to disable HTML5 default validation-->
-      <div class="inputWrapper">
-        <input type="email" formControlName="email" class="form-control" placeholder="Please Enter Your Email" required> <!-- name is used to commnunicate to formGroup's properties-->
-        <p *ngIf="email.touched && email.invalid" class="error"><sup>*</sup>Please Enter A Correct Email</p> <!-- Accessing fromGoup object's property using Getter method -->
-        <p *ngIf="email.errors?.minlength" class="error"><sup>*</sup>Email</p> <!-- Accessing Reactive Forms error property using Getter method-->
-      </div>
-      <div class="form-group">
-        <button type="submit" class="btn-default" [disabled]="!emaillistForm.valid">SUBSCRIBE</button> <!--  Disable product form unless it is valid-->
-      </div>
-    </form>
-  </div>
-</section>
+<NewsletterCallout></NewsletterCallout>
 <SubNavigation></SubNavigation>
 <Footer></Footer>

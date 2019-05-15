@@ -25,6 +25,8 @@ import { Gallery } from './shared/pageComponents/welcomeComponents/Gallery/galle
 import { Footer } from './shared/pageComponents/global/footer/footer.component';
 import { Navigation } from './shared/pageComponents/global/navigation/navigation.component';
 import { SubNavigation } from './shared/pageComponents/global/subNavigation/subNavigation.component';
+import { NewsletterCallout } from './shared/pageComponents/global/newsletterCallout/newsletterCallout.component';
+
 
 // Firebase services + enviorment module
 import { AngularFireModule } from '@angular/fire';
@@ -60,7 +62,8 @@ import { NgxPaginationModule } from 'ngx-pagination';
     Footer,
     Gallery,
     Navigation,
-    SubNavigation
+    SubNavigation,
+    NewsletterCallout
   ],
   imports: [
     BrowserModule,
