@@ -11,6 +11,7 @@ import { ToastrService } from 'ngx-toastr'; // Alert message using NGX toastr
 export class Navigation implements OnInit {
   public contactTab: boolean = false;
   public searchTab: boolean = false;
+  public overlayMenu: boolean = false;
   
   constructor(
     public crudApi: CrudService,  // CRUD API services
@@ -30,6 +31,10 @@ export class Navigation implements OnInit {
   clickSearch() {
     this.searchTab = !this.searchTab;
     this.contactTab = false;
+  }
+  
+  toggleMenu() {
+    this.overlayMenu = !this.overlayMenu;
   }
   
   @HostListener('window:scroll', ['$event'])
