@@ -26,6 +26,7 @@ import { Footer } from './shared/pageComponents/global/footer/footer.component';
 import { Navigation } from './shared/pageComponents/global/navigation/navigation.component';
 import { SubNavigation } from './shared/pageComponents/global/subNavigation/subNavigation.component';
 import { NewsletterCallout } from './shared/pageComponents/global/newsletterCallout/newsletterCallout.component';
+import { Events } from './shared/pageComponents/welcomeComponents/events/events.component';
 
 
 // Firebase services + enviorment module
@@ -63,7 +64,8 @@ import { NgxPaginationModule } from 'ngx-pagination';
     Gallery,
     Navigation,
     SubNavigation,
-    NewsletterCallout
+    NewsletterCallout,
+    Events
   ],
   imports: [
     BrowserModule,

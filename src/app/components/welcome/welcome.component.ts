@@ -11,6 +11,7 @@ import { Gallery } from '../../shared/pageComponents/welcomeComponents/Gallery/g
 import { NewsletterCallout } from '../../shared/pageComponents/global/newsletterCallout/newsletterCallout.component';
 import { SubNavigation } from '../../shared/pageComponents/global/subNavigation/subNavigation.component';
 import { Footer } from '../../shared/pageComponents/global/footer/footer.component';
+import { Events } from '../../shared/pageComponents/welcomeComponents/events/events.component';
 
 @Component({
   selector: 'app-welcome',
@@ -21,6 +22,7 @@ export class WelcomeComponent implements OnInit, AfterViewInit {
   
   @ViewChild(WelcomeHeader) header: WelcomeHeader;
   @ViewChild(Gallery) gallery: Gallery;
+  @ViewChild(Events) events: Events;
   @ViewChild(NewsletterCallout) newsletterCallout: NewsletterCallout;
   @ViewChild(SubNavigation) SubNavigation: SubNavigation;
   @ViewChild(Footer) footer: Footer;
