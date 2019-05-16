@@ -1,4 +1,4 @@
-<!-- Navigation -->
+<!-- Desktop Navigation -->
 <nav class="navbar" id="navbar">
   <div class="flex">
     <a class="nav-btn" routerLink="/shop">
@@ -19,12 +19,21 @@
     <a class="nav-btn" (click)="clickSearch()">
       <span class="dashboard-text">Search</span>
     </a>
-
     <a class="nav-btn" routerLink="/dashboard">
       <span class="dashboard-text">My Account</span>
     </a>
   </div>
 </nav>
+<!-- Mobile Navigation -->
+<nav class="navbar-mobile" id="navbar-mobile">
+    <a class="nav-btn-left">
+      <img class="mobileBrand" src="https://firebasestorage.googleapis.com/v0/b/kaya-coffee.appspot.com/o/mobileIcon.png?alt=media&token=cd84be52-c00d-4094-9036-fe7887dfad34" />
+    </a>
+    <a class="nav-btn-right" (click)="toggleMenu()">
+      <i class="icon fas fa-bars"></i>
+    </a>
+</nav>
+<!-- Mobile -->
 <div class="modal" role="dialog" tabindex="1" [ngClass]="contactTab ? 'show' : 'hide'">
   <div class="modal--content">
     <a class="btn-close" (click)="clickContact()">

@@ -36,10 +36,14 @@ export class Navigation implements OnInit {
   onWindowScroll() {
     if (window.pageYOffset > 400) {
       let element = document.getElementById('navbar');
+      let mobileMenu = document.getElementById('navbar-mobile');
       element.classList.add('sticky');
+      mobileMenu.classList.add('sticky-mobile');
     } else {
       let element = document.getElementById('navbar');
+      let mobileMenu = document.getElementById('navbar-mobile');
       element.classList.remove('sticky');
+      mobileMenu.classList.remove('sticky-mobile');
     }
   }
 }
