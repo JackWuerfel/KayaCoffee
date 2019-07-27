@@ -11,7 +11,7 @@ import { Navigation } from '../../global/navigation/navigation.component';
 })
 export class WelcomeHeader implements OnInit, AfterViewInit {
   
-  @ViewChild(Navigation) navigation: Navigation;
+  @ViewChild(Navigation, { static: true }) navigation: Navigation;
   constructor(
     public crudApi: CrudService,  // CRUD API services
     public fb: FormBuilder,       // Form Builder service for Reactive forms

@@ -20,12 +20,12 @@ import { Events } from '../../shared/pageComponents/welcomeComponents/events/eve
 })
 export class WelcomeComponent implements OnInit, AfterViewInit {
   
-  @ViewChild(WelcomeHeader) header: WelcomeHeader;
-  @ViewChild(Gallery) gallery: Gallery;
-  @ViewChild(Events) events: Events;
-  @ViewChild(NewsletterCallout) newsletterCallout: NewsletterCallout;
-  @ViewChild(SubNavigation) SubNavigation: SubNavigation;
-  @ViewChild(Footer) footer: Footer;
+  @ViewChild(WelcomeHeader, { static: true }) header: WelcomeHeader;
+  @ViewChild(Gallery, { static: true }) gallery: Gallery;
+  @ViewChild(Events, { static: true }) events: Events;
+  @ViewChild(NewsletterCallout, { static: true }) newsletterCallout: NewsletterCallout;
+  @ViewChild(SubNavigation, { static: true }) SubNavigation: SubNavigation;
+  @ViewChild(Footer, { static: true }) footer: Footer;
 
   public tabsToggle: boolean = false;
   public tab1: boolean = false;
